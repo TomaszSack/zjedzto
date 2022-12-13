@@ -8,11 +8,12 @@ module.exports = {
         "secondary-orange": "rgba(254, 147, 5, 0.5)",
         "primary-pink": "#F562BE",
         "secondary-pink": "rgba(245, 99, 187, 0.7)",
+        "primary-gray": "#A59E95",
       },
       boxShadow: {
-        "nav": "0 0px 25px 0px rgba(0, 0, 0, 0.3)",
+        nav: "0 0px 25px 0px rgba(0, 0, 0, 0.3)",
       },
     },
   },
   plugins: [],
-}
+};

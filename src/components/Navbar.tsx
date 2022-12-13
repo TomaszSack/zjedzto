@@ -5,7 +5,7 @@ import ContentContainer from "../layout/ContentContainer";
 
 const Navbar = () => {
   return (
-    <div className="fixed h-20 w-full flex justify-center bg-white shadow-nav">
+    <div className="fixed h-20 w-full bg-white shadow-nav">
       <ContentContainer className="flex items-center justify-between">
         <a href="/" className="h-4/6">
           <img src={logo} className="h-full" />
