@@ -13,10 +13,13 @@ const Navbar = () => {
         <div className="text-4xl">
           <span className="font-bold">Zjedz</span>To
         </div>
-        <FontAwesomeIcon
-          className="h-2/6 text-primary-orange"
-          icon={faCartShopping}
-        />
+        <div className="flex items-center h-2/6">
+          <FontAwesomeIcon
+            className="h-full text-primary-pink"
+            icon={faCartShopping}
+          />
+          <div className="h-6 w-6 bg-secondary-pink rounded-full text-white text-center">1</div>
+        </div>
       </ContentContainer>
     </div>
   );
