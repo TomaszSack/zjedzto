@@ -1,5 +1,7 @@
 import "./Hero.css";
 import HeroImg from "../assets/hero-img.jpeg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const Hero = () => {
   return (
@@ -18,13 +20,19 @@ const Hero = () => {
             Burgery z najwyszczej jakości mięsa już na Ciebie czekają!
           </h2>
           <a
-            href="#test"
+            href="#menu"
             className="bg-secondary-orange py-2 px-10 text-white text-3xl rounded-2xl"
           >
             Sprawdź menu
           </a>
         </div>
       </div>
+      <a href="#menu">
+        <FontAwesomeIcon
+          className="bounce-top absolute right-1/2 bottom-4 h-10 translate-x-1/2 text-secondary-orange"
+          icon={faChevronDown}
+        />
+      </a>
     </div>
   );
 };
