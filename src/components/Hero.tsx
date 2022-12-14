@@ -6,7 +6,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 const Hero = () => {
   return (
     <div className="flex justify-end h-screen">
-      <img className="absolute left-0 h-screen z-minus" src={HeroImg} />
+      <img className="absolute left-0 h-screen z-minus" src={HeroImg} alt="soczysty burger z bekonem" />
       <div className="flex justify-end h-full w-7/12">
         <svg className="svg" viewBox="0 0 100 100" preserveAspectRatio="none">
           <polygon
