@@ -2,6 +2,7 @@ import "./Hero.css";
 import HeroImg from "../assets/hero-img.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import Button from "./Button";
 
 const Hero = () => {
   return (
@@ -19,12 +20,7 @@ const Hero = () => {
           <h2 className="text-4xl text-center leading-normal">
             Burgery z najwyszczej jakości mięsa już na Ciebie czekają!
           </h2>
-          <a
-            href="#menu"
-            className="bg-secondary-orange py-2 px-10 text-white text-3xl rounded-2xl"
-          >
-            Sprawdź menu
-          </a>
+          <Button>Sprawdź menu</Button>
         </div>
       </div>
       <a href="#menu">
