@@ -19,7 +19,7 @@ const dishes = [
   },
 ];
 
-const Menu = () => {
+const ProductsList = () => {
   return (
     <div className="flex justify-center">
       <div className="grid grid-cols-3 gap-12">
@@ -30,4 +30,4 @@ const Menu = () => {
     </div>
   );
 };
-export default Menu;
+export default ProductsList;
