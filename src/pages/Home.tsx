@@ -1,10 +1,11 @@
 import Hero from "../components/Hero";
+import MenuSection from "../components/MenuSection";
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <div id="menu" className="h-screen bg-primary-white"></div>
+      <MenuSection />
     </>
   );
 };
