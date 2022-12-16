@@ -7,7 +7,7 @@ type Props = {
 };
 const ProductItem: React.FC<Props> = ({ name, img, price }) => {
   return (
-    <div className="h-96 w-96 bg-white rounded-2xl overflow-hidden	">
+    <div className="h-96 w-96 bg-white rounded-2xl overflow-hidden shadow-xl">
       <div className="h-11/18 w-full">
         <img className="w-full h-full" src={img} alt="" />
       </div>
