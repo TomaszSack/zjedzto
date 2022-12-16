@@ -20,7 +20,7 @@ const Hero = () => {
           <h2 className="text-4xl text-center leading-normal">
             Burgery z najwyszczej jakości mięsa już na Ciebie czekają!
           </h2>
-          <Button>Sprawdź menu</Button>
+          <Button href="#menu">Sprawdź menu</Button>
         </div>
       </div>
       <a href="#menu">

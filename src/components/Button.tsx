@@ -1,11 +1,12 @@
 type Props = {
-  children: React.ReactNode,
+  href?:string,
   pink?:boolean,
+  children: React.ReactNode,
 };
 
-const Button: React.FC<Props> = ({ pink, children }) => (
+const Button: React.FC<Props> = ({ href, pink, children }) => (
   <a
-    href="#menu"
+    href={href}
     className={
       pink
         ? "bg-secondary-pink text-white text-xl py-1 px-10 rounded-2xl"

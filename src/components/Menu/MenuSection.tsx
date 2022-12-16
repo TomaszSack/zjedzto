@@ -12,7 +12,7 @@ const MenuSection = () => {
         <SearchBar />
         <ProductsList />
         <div className="flex justify-center pt-12">
-          <Button>
+          <Button href="/order">
             Zamawiam
             <FontAwesomeIcon
               className="pl-2 text-white"
