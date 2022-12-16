@@ -1,5 +1,5 @@
 import Hero from "../components/Hero";
-import MenuSection from "../components/MenuSection";
+import MenuSection from "../components/Menu/MenuSection";
 
 const Home = () => {
   return (
