@@ -38,8 +38,8 @@ const ProductsList = () => {
   return (
     <div className="flex justify-center">
       <div className="grid grid-cols-3 gap-12 ">
-        {dishes.map((e) => {
-          return <ProductItem name={e.name} price={e.price} img={e.img} />;
+        {dishes.map((dish) => {
+          return <ProductItem name={dish.name} price={dish.price} img={dish.img} />;
         })}
       </div>
     </div>
