@@ -2,7 +2,7 @@ import Button from "../Button";
 
 type Props = {
   name: string;
-  img: string;
+  img?: string;
   price: string;
 };
 const ProductItem: React.FC<Props> = ({ name, img, price }) => {

@@ -7,7 +7,7 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const MenuSection = () => {
   return (
-    <div id="menu" className="h-screen bg-primary-white">
+    <div id="menu" className="h-auto bg-primary-white pb-20">
       <ContentContainer>
         <SearchBar />
         <ProductsList />

@@ -3,36 +3,43 @@ import img from "../../assets/hero-img.jpeg"
 
 const dishes = [
   {
-    name: "burger",
+    name: "Burger wołowy z bekonem",
+    price: "32,99 zł",
+    img
   },
   {
-    name: "frytki",
+    name: "Burger z kurczakiem",
+    price: "30,99",
+    img
   },
   {
-    name: "burger",
+    name: "Burger wołowy na ostro",
+    price: "35,99",
+    img
   },
   {
-    name: "burger",
+    name: "Burger wege",
+    price: "27,99",
+    img
   },
   {
-    name: "frytki",
+    name: "Frytki",
+    price: "6,99",
+    img
   },
   {
-    name: "burger",
+    name: "Krążki cebulowe",
+    price: "8,99",
+    img
   },
 ];
 
 const ProductsList = () => {
   return (
     <div className="flex justify-center">
-      <div className="grid grid-cols-3 gap-12">
-        <ProductItem
-          name="Burger wołowy z bekonem"
-          img={img}
-          price="39,99 zł"
-        />
+      <div className="grid grid-cols-3 gap-12 ">
         {dishes.map((e) => {
-          return <div className="h-96 w-96 bg-red-500 min-h-min">{e.name}</div>;
+          return <ProductItem name={e.name} price={e.price} img={e.img} />;
         })}
       </div>
     </div>
