@@ -1,5 +1,11 @@
+import Hero from "../components/Hero";
 
 const Home = () => {
-  return <div className="flex items-center justify-center text-center h-screen bg-gray-500">Home</div>;
+  return (
+    <>
+      <Hero />
+      <div id="menu" className="h-screen bg-primary-white"></div>
+    </>
+  );
 };
 export default Home;

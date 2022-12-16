@@ -9,9 +9,13 @@ module.exports = {
         "primary-pink": "#F562BE",
         "secondary-pink": "rgba(245, 99, 187, 0.7)",
         "primary-gray": "#A59E95",
+        "primary-white": "#f9f9f9",
       },
       boxShadow: {
         nav: "0 0px 25px 0px rgba(0, 0, 0, 0.3)",
+      },
+      zIndex: {
+        'minus': "-5",
       },
     },
   },
