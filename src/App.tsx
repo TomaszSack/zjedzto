@@ -1,12 +1,16 @@
 import React from "react";
 import Home from "./pages/Home";
-import PageWrapper from "layout/PageWrapper";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import OrderPage from "pages/OrderPage";
 
 function App() {
   return (
-    <PageWrapper>
-      <Home />
-    </PageWrapper>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/order" element={<OrderPage />} />
+      </Routes>
+    </Router>
   );
 }
 
