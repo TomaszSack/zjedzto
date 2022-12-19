@@ -1,5 +1,5 @@
 type Props = {
-  className: string;
+  className?: string;
   children: React.ReactNode;
 };
 const ContentContainer: React.FC<Props> = ({ className, children }) => (
