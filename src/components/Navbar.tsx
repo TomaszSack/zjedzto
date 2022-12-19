@@ -8,7 +8,7 @@ const Navbar = () => {
     <div className="fixed h-20 w-full bg-white shadow-nav z-10">
       <ContentContainer className="flex items-center justify-between">
         <a href="/" className="h-4/6">
-          <img src={logo} className="h-full" />
+          <img src={logo} className="h-full" alt="ZjedzTo logo" />
         </a>
         <div className="text-4xl">
           <span className="font-bold">Zjedz</span>To
