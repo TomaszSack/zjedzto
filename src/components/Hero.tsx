@@ -1,5 +1,5 @@
 import "./Hero.css";
-import HeroImg from "../assets/hero-img.jpeg";
+import HeroImg from "assets/hero-img.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import Button from "./Button";
@@ -20,7 +20,7 @@ const Hero = () => {
           <h2 className="text-4xl text-center leading-normal">
             Burgery z najwyszczej jakości mięsa już na Ciebie czekają!
           </h2>
-          <Button>Sprawdź menu</Button>
+          <Button href="#menu">Sprawdź menu</Button>
         </div>
       </div>
       <a href="#menu">

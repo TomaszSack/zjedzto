@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "./pages/Home";
-import PageWrapper from "./layout/PageWrapper";
+import PageWrapper from "layout/PageWrapper";
 
 function App() {
   return (

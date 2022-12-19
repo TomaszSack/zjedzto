@@ -1,4 +1,4 @@
-import ContentContainer from "../layout/ContentContainer";
+import ContentContainer from "layout/ContentContainer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare, faInstagram, faSquareTwitter } from "@fortawesome/free-brands-svg-icons";
 
