@@ -1,7 +1,7 @@
-import logo from "../assets/logo-wbg.png";
+import logo from "assets/logo-wbg.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import ContentContainer from "../layout/ContentContainer";
+import ContentContainer from "layout/ContentContainer";
 
 const Navbar = () => {
   return (

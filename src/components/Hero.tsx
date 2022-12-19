@@ -1,5 +1,5 @@
 import "./Hero.css";
-import HeroImg from "../assets/hero-img.jpeg";
+import HeroImg from "assets/hero-img.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import Button from "./Button";

@@ -1,5 +1,5 @@
-import ContentContainer from "../../layout/ContentContainer";
-import Button from "../Button";
+import ContentContainer from "layout/ContentContainer";
+import Button from "components/Button";
 import ProductsList from "./ProductsList";
 import SearchBar from "./SearchBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
