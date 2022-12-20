@@ -15,7 +15,7 @@ const OrderPage = () => {
                 <Button href="/summary" pink className="text-3xl py-2">Zamawiam</Button>
               </div>
               <div>
-                <Button cancel>Anuluj</Button>
+                <Button href="/" cancel>Anuluj</Button>
               </div>
             </div>
           </div>
