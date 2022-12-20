@@ -1,4 +1,5 @@
 import Button from "components/Button";
+import FormSection from "components/Order/FormSection";
 import ContentContainer from "layout/ContentContainer";
 import PageWrapper from "layout/PageWrapper";
 
@@ -8,7 +9,7 @@ const OrderPage = () => {
       <div className="h-screen bg-primary-white">
         <ContentContainer className="flex flex-wrap items-center">
           <div className="flex flex-wrap h-5/6 w-full">
-            <div className="h-5/6 w-1/2 bg-red-500"></div>
+            <FormSection />
             <div className="h-5/6 w-1/2 bg-red-300"></div>
             <div className="flex flex-col justify-around items-center h-1/6 w-full">
               <div>
