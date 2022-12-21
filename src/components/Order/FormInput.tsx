@@ -1,13 +1,25 @@
 type Props = {
   className?: string;
+  name: string;
+  register: any;
+  required: boolean;
   children: React.ReactNode;
 };
 
-const FormInput: React.FC<Props> = ({ className, children }) => {
+const FormInput: React.FC<Props> = ({
+  className,
+  name,
+  register,
+  required,
+  children,
+}) => {
   return (
     <div>
       <p>{children}</p>
-      <input className={`h-8 border border-primary-gray ${className}`}></input>
+      <input
+        {...register(name, { required })}
+        className={`h-8 border border-primary-gray ${className}`}
+      ></input>
     </div>
   );
 };
