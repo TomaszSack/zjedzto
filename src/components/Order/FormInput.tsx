@@ -14,11 +14,11 @@ const FormInput: React.FC<Props> = ({
   children,
 }) => {
   return (
-    <div>
-      <p>{children}</p>
+    <div className="p-1">
+      <p className="text-xs">{children}</p>
       <input
         {...register(name, { required })}
-        className={`h-8 w-64 border border-primary-gray ${className}`}
+        className={`h-6 3xl:h-8 w-56 3xl:w-64 border border-primary-gray ${className}`}
       ></input>
     </div>
   );

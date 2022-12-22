@@ -5,7 +5,7 @@ import FormContactGroup from "./FormContactGroup";
 
 const FormSection: React.FC<{ register: any }> = ({ register }) => {
   return (
-    <div className="h-5/6 w-1/2">
+    <div className="h-5/6 w-1/2 pr-8">
       <SectionHeader>Dane do dostawy</SectionHeader>
       <FormAddressGroup register={register} />
       <FormContactGroup register={register} />

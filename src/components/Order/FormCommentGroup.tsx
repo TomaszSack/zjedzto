@@ -6,15 +6,10 @@ const FormCommentGroup: React.FC<{ register: any }> = ({ register }) => {
     <div className="bg-white shadow-lg my-6 rounded-b-3xl">
       <GroupHeader>Komentarz</GroupHeader>
       <div className="px-8 pb-4">
-        {/* <FormInput name="firstName" register={register} required>
-          Imie *
-        </FormInput> */}
         <textarea
           {...register("comment")}
           className="h-24 w-full border border-primary-gray"
-        >
-          test
-        </textarea>
+        />
       </div>
     </div>
   );

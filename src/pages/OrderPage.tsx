@@ -25,7 +25,7 @@ const OrderPage = () => {
         <ContentContainer className="flex flex-wrap items-center">
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-wrap h-5/6 w-full"
+            className="flex flex-wrap h-5/6 w-full pt-2"
           >
             <FormSection register={register} />
             <div className="h-5/6 w-1/2 bg-red-300"></div>
@@ -33,7 +33,7 @@ const OrderPage = () => {
               <div>
                 <button
                   type="submit"
-                  className="bg-secondary-pink py-2 px-10 text-white text-3xl rounded-2xl"
+                  className="bg-secondary-pink py-2 px-10 text-white text-2xl 3xl:text-3xl rounded-2xl"
                 >
                   Zamawiam
                 </button>
