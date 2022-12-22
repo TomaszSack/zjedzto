@@ -1,7 +1,9 @@
+import { UseFormRegister, FieldValues } from "react-hook-form";
+
 type Props = {
   className?: string;
   name: string;
-  register: any;
+  register: UseFormRegister<FieldValues>;
   required?: boolean;
   children: React.ReactNode;
 };

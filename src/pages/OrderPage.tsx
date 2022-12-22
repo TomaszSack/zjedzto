@@ -1,5 +1,6 @@
 import Button from "components/Button";
 import FormSection from "components/Order/FormSection";
+import OrderSection from "components/Order/OrderSection";
 import ContentContainer from "layout/ContentContainer";
 import PageWrapper from "layout/PageWrapper";
 import { useForm } from "react-hook-form";
@@ -28,7 +29,7 @@ const OrderPage = () => {
             className="flex flex-wrap h-5/6 w-full pt-2"
           >
             <FormSection register={register} />
-            <div className="h-5/6 w-1/2 bg-red-300"></div>
+            <OrderSection />
             <div className="flex flex-col justify-around items-center h-1/6 w-full">
               <div>
                 <button

@@ -1,7 +1,10 @@
 import GroupHeader from "components/GroupHeader";
 import FormInput from "./FormInput";
+import { UseFormRegister, FieldValues } from "react-hook-form";
 
-const FormContactGroup: React.FC<{ register: any }> = ({ register }) => {
+const FormContactGroup: React.FC<{
+  register: UseFormRegister<FieldValues>;
+}> = ({ register }) => {
   return (
     <div className="bg-white shadow-lg my-3 3xl:my-6">
       <GroupHeader>Kontakt</GroupHeader>

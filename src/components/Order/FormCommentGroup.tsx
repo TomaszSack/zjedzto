@@ -1,7 +1,9 @@
 import GroupHeader from "components/GroupHeader";
-import FormInput from "./FormInput";
+import { UseFormRegister, FieldValues } from "react-hook-form";
 
-const FormCommentGroup: React.FC<{ register: any }> = ({ register }) => {
+const FormCommentGroup: React.FC<{
+  register: UseFormRegister<FieldValues>;
+}> = ({ register }) => {
   return (
     <div className="bg-white shadow-lg my-6 rounded-b-3xl">
       <GroupHeader>Komentarz</GroupHeader>

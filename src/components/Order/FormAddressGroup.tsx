@@ -1,7 +1,10 @@
 import GroupHeader from "components/GroupHeader";
 import FormInput from "./FormInput";
+import { UseFormRegister, FieldValues } from "react-hook-form";
 
-const FormAddressGroup: React.FC<{ register: any }> = ({ register }) => {
+const FormAddressGroup: React.FC<{
+  register: UseFormRegister<FieldValues>;
+}> = ({ register }) => {
   return (
     <div className="bg-white shadow-lg my-3 3xl:my-6 ">
       <GroupHeader>Adres</GroupHeader>
@@ -9,13 +12,13 @@ const FormAddressGroup: React.FC<{ register: any }> = ({ register }) => {
         <FormInput name="street" register={register} required>
           Ulica *
         </FormInput>
-        <FormInput name="apartment" register={register} required>
+        <FormInput name="houseNumber" register={register} required>
           Numer *
         </FormInput>
         <FormInput name="city" register={register} required>
           Miasto *
         </FormInput>
-        <FormInput name="localNumber" register={register}>
+        <FormInput name="apartment" register={register}>
           Lokal
         </FormInput>
         <FormInput name="floor" register={register}>

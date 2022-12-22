@@ -1,5 +1,5 @@
 import ProductItem from "./ProductItem";
-import img from "../../assets/hero-img.jpeg";
+import img from "assets/hero-img.jpeg";
 
 const dishes = [
   {
