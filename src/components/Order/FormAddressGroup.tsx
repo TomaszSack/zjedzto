@@ -12,13 +12,16 @@ const FormAddressGroup: React.FC<{
         <FormInput name="street" register={register} required>
           Ulica *
         </FormInput>
-        <FormInput name="houseNumber" register={register} required>
+        <FormInput name="house_number" register={register} required>
           Numer *
+        </FormInput>
+        <FormInput name="postcode" register={register} required>
+          Kod pocztowy *
         </FormInput>
         <FormInput name="city" register={register} required>
           Miasto *
         </FormInput>
-        <FormInput name="apartment" register={register}>
+        <FormInput name="apartment_number" register={register}>
           Lokal
         </FormInput>
         <FormInput name="floor" register={register}>
