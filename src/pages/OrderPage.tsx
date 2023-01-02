@@ -28,7 +28,7 @@ const OrderPage = () => {
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-wrap h-5/6 w-full pt-2"
           >
-            <FormSection register={register} />
+            <FormSection register={register} errors={errors} />
             <OrderSection />
             <div className="flex flex-col justify-around items-center h-1/6 w-full">
               <div>
