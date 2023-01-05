@@ -22,12 +22,12 @@ const FormInput: React.FC<Props> = ({
       <div className="flex justify-between">
         <p className="text-xs">{children}</p>
         {errors[name] && (
-          <p className="text-red-400 text-xs font-bold">Pole wymagane!</p>
+          <p className="pr-2 text-red-400 text-xs font-bold">Pole wymagane!</p>
         )}
       </div>
       <input
         {...register(name, { required })}
-        className={`h-6 3xl:h-8 w-56 3xl:w-64 border border-primary-gray ${className}`}
+        className={`h-6 3xl:h-8 w-64 border border-primary-gray ${className}`}
       ></input>
     </div>
   );
