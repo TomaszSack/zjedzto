@@ -1,4 +1,26 @@
 {
   "item": { "name": "test" },
-  "order": {}
+  "order": [
+  {
+    "id": 1,
+    "title": "Burger wołowy z bekonem",
+    "price": 39.99,
+    "quantity": 1,
+    "img": "assets/hero-img.jpeg"
+  },
+  {
+    "id": 2,
+    "title": "Burger z kurczakiem",
+    "price": 29.99,
+    "quantity": 2,
+    "img": "assets/hero-img.jpeg"
+  },
+  {
+    "id": 3,
+    "title": "Burger ze strusia",
+    "price": 49.99,
+    "quantity": 1,
+    "img": "assets/hero-img.jpeg"
+  }
+]
 }

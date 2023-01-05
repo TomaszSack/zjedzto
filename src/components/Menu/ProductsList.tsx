@@ -49,7 +49,7 @@ const dishes = [
 const ProductsList = () => {
   return (
     <div className="flex justify-center">
-      <div className="grid grid-cols-3 gap-12 ">
+      <div className="grid grid-cols-3 gap-12">
         {dishes.map((dish) => {
           return (
             <ProductItem

@@ -6,6 +6,27 @@ import PageWrapper from "layout/PageWrapper";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
+const order = [
+  {
+    id: 1,
+    dish: "Burger wołowy z bekonem",
+    price: 39.99,
+    quantity: 1,
+  },
+  {
+    id: 2,
+    dish: "Burger z kurczakiem",
+    price: 29.99,
+    quantity: 2,
+  },
+  {
+    id: 3,
+    dish: "Burger ze strusia",
+    price: 49.99,
+    quantity: 1,
+  },
+];
+
 const OrderPage = () => {
   const {
     register,
@@ -16,9 +37,11 @@ const OrderPage = () => {
   const navigate = useNavigate();
 
   const onSubmit = (values: any) => {
+    values.order=order
     console.log(values);
     navigate('/')
   };
+
 
   return (
     <PageWrapper>
