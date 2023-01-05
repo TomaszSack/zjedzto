@@ -14,7 +14,7 @@ const ProductItem: React.FC<Props> = ({ alt, name, img, price }) => {
       </div>
       <div className="flex flex-col items-center justify-between h-7/18 text-lg 3xl:text-2xl py-2 3xl:py-3">
         <div>{name}</div>
-        <div>{price}</div>
+        <div>{price} zł</div>
         <Button pink>Dodaj</Button>
       </div>
     </div>

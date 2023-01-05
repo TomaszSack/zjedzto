@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import SectionHeader from "components/SectionHeader";
 import OrderItem from "./OrderItem";
-import QuantityPicker from "components/QuantityPicker/QuantityPicker";
 
 const url = "http://localhost:3000/order";
 
@@ -29,34 +28,14 @@ const OrderSection = () => {
         <div className="h-5/6">
           {data.map((dish) => {
             return (
-              // <OrderItem
-              //   key={dish.id}
-              //   name={dish.dish}
-              //   price={dish.price}
-              //   quantity={dish.quantity}
-              //   img={dish.img}
-              //   id={dish.id}
-              //   onClick={removeItem(dish.id)}
-              // />
-              <div
+              <OrderItem
                 key={dish.id}
-                className="w-5/6 h-3/18 m-auto bg-tertiary-orange p-1 mb-4 rounded-lg"
-              >
-                <div className="flex items-center justify-between w-full h-full bg-white rounded-lg overflow-hidden">
-                  <img src={dish.img} className="h-full" />
-                  <div className="w-1/3 text-center">{dish.title}</div>
-                  <div className="text-xl">{dish.price} zł</div>
-                  {/* <div>{dish.quantity} szt</div> */}
-                  <QuantityPicker min={0} max={9} value={dish.quantity} />
-                  <button
-                    type="button"
-                    onClick={() => removeItem(dish.id)}
-                    className="pr-4 text-red-400 font-bold text-2xl pb-2"
-                  >
-                    x
-                  </button>
-                </div>
-              </div>
+                name={dish.title}
+                price={dish.price}
+                quantity={dish.quantity}
+                img={dish.img}
+                onClick={removeItem.bind(null,dish.id)}
+              />
             );
           })}
         </div>
