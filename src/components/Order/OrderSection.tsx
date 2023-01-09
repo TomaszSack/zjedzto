@@ -10,11 +10,9 @@ interface Order {
   quantity: number;
 }
 
-type OrderType = Order[]
-
 interface Props {
-  data: OrderType;
-  setData: Dispatch<SetStateAction<OrderType>>;
+  data: Order[];
+  setData: Dispatch<SetStateAction<Order[]>>;
 }
 
 const OrderSection: React.FC<Props> = ({ data, setData }) => {
@@ -30,14 +28,15 @@ const OrderSection: React.FC<Props> = ({ data, setData }) => {
       <div className="h-5/6 bg-white shadow-lg my-3 rounded-b-3xl pt-6">
         <div className="h-5/6">
           {data.map((dish) => {
+            const {id, title, price, quantity, img} = dish
             return (
               <OrderItem
-                key={dish.id}
-                name={dish.title}
-                price={dish.price}
-                quantity={dish.quantity}
-                img={dish.img}
-                onClick={removeItem.bind(null, dish.id)}
+                key={id}
+                name={title}
+                price={price}
+                quantity={quantity}
+                img={img}
+                onClick={removeItem.bind(null, id)}
               />
             );
           })}

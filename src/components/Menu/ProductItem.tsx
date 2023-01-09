@@ -1,8 +1,8 @@
 import Button from "components/Button";
 
-type Props = {
+interface Props {
   name: string;
-  img?: string;
+  img: string;
   price: string;
   alt: string;
 };

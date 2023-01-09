@@ -1,11 +1,11 @@
 import QuantityPicker from "components/QuantityPicker/QuantityPicker";
 
 interface Props {
-  img?: string;
   name: string;
   price: number;
   quantity: number;
-  onClick:any;
+  img: string;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const OrderItem: React.FC<Props> = ({

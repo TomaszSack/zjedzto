@@ -1,6 +1,6 @@
 import { UseFormRegister, FieldValues, FieldErrors } from "react-hook-form";
 
-type Props = {
+interface Props {
   className?: string;
   name: string;
   register: UseFormRegister<FieldValues>;

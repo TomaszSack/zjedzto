@@ -1,4 +1,4 @@
-type Props = {
+interface Props {
   href?: string;
   className?: string;
   pink?: boolean;
