@@ -21,7 +21,7 @@ const OrderItem: React.FC<Props> = ({
         <img src={img} className="h-full" />
         <div className="w-1/3 text-center">{name}</div>
         <div className="text-xl">{price} zł</div>
-        <QuantityPicker min={0} max={9} value={quantity} />
+        <QuantityPicker min={0} max={9} initialValue={quantity} />
         <button
           type="button"
           className="pr-4 text-red-400 font-bold text-2xl pb-2"
