@@ -1,7 +1,11 @@
 import { render } from "@testing-library/react";
+import MenuSection from "components/Menu/MenuSection";
 import ProductsList from "components/Menu/ProductsList";
 
-test("renders component", async () => {
-  const { getAllByTestId } = render(<ProductsList />);
-  expect(getAllByTestId("products")).toHaveLength(4);
+test("should navigate to order page", () => {
+  const { getByText } = render(<MenuSection />);
+  expect(getByText("Zamawiam").closest("a")).toHaveAttribute(
+    "href",
+    "/order"
+  );;
 });
