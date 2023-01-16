@@ -58,7 +58,7 @@ test("should not display error when value is valid", async () => {
 test("should display required error when value is invalid", async () => {
   const { getByRole, findAllByRole } = render(<OrderPage />);
 
-  fireEvent.submit(getByRole("button"));
+  fireEvent.submit(getByRole("button", { name: /zamawiam/i }));
 
   expect(await findAllByRole("alert")).toHaveLength(8);
 });
