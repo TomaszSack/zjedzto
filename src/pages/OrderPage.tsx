@@ -35,12 +35,12 @@ const OrderPage = () => {
     dataFetch();
   }, []);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const onSubmit = (values: any) => {
     values.order = data;
     console.log(values);
-    navigate("/");
+    // navigate("/");
   };
 
   return (

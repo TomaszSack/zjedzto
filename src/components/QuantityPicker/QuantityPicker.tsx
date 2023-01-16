@@ -49,7 +49,7 @@ const QuantityPicker: React.FC<Props> = ({ initialValue, max, min }) => {
         }quantity-modifier modifier-left`}
         onClick={decrement}
       >
-        &ndash;
+        -
       </button>
       <input
         className="quantity-display"
@@ -64,7 +64,7 @@ const QuantityPicker: React.FC<Props> = ({ initialValue, max, min }) => {
         }quantity-modifier modifier-right`}
         onClick={increment}
       >
-        &#xff0b;
+        +
       </button>
     </span>
   );
