@@ -49,7 +49,6 @@ test("should not display error when value is valid", async () => {
 
   await act(async () => {
     fireEvent.click(getByRole("button"));
-    // fireEvent.submit(screen.getByRole("button"));
   });
 
   expect(await findByText("Zamawiam")).toBeInTheDocument();
