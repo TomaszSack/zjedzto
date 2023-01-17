@@ -16,8 +16,8 @@ const Hero = () => {
           />
         </svg>
         <div className="flex flex-col justify-center items-center w-full h-full px-8 bg-primary-white text-black space-y-6">
-          <h1 className="text-7xl">Głodny?</h1>
-          <h2 className="text-4xl text-center leading-normal">
+          <h1 className="text-6xl 3xl:text-7xl">Głodny?</h1>
+          <h2 className="text-3xl 3xl:text-4xl text-center leading-normal">
             Burgery z najwyszczej jakości mięsa już na Ciebie czekają!
           </h2>
           <Button href="#menu">Sprawdź menu</Button>

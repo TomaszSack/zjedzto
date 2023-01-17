@@ -1,56 +1,39 @@
+import { useState, useEffect } from "react";
 import ProductItem from "./ProductItem";
-import img from "../../assets/hero-img.jpeg";
 
-const dishes = [
-  {
-    name: "Burger wołowy z bekonem",
-    price: "32,99 zł",
-    img,
-    alt: "soczysty burger wołowy z frytkami",
-  },
-  {
-    name: "Burger z kurczakiem",
-    price: "30,99",
-    img,
-    alt: "soczysty burger wołowy z frytkami",
-  },
-  {
-    name: "Burger wołowy na ostro",
-    price: "35,99",
-    img,
-    alt: "soczysty burger wołowy z frytkami",
-  },
-  {
-    name: "Burger wege",
-    price: "27,99",
-    img,
-    alt: "soczysty burger wołowy z frytkami",
-  },
-  {
-    name: "Frytki",
-    price: "6,99",
-    img,
-    alt: "soczysty burger wołowy z frytkami",
-  },
-  {
-    name: "Krążki cebulowe",
-    price: "8,99",
-    img,
-    alt: "soczysty burger wołowy z frytkami",
-  },
-];
+const url = "http://localhost:3000/menu";
+
+interface Products {
+  id:number;
+  name: string;
+  price: string;
+  img: string;
+  alt: string;
+};
 
 const ProductsList = () => {
+  const [data, setData] = useState<Products[]>([]);
+
+  useEffect(() => {
+    const dataFetch = async () => {
+      const data = await (await fetch(url)).json();
+      setData(data);
+    };
+    dataFetch();
+  }, []);
+
   return (
     <div className="flex justify-center">
-      <div className="grid grid-cols-3 gap-12 ">
-        {dishes.map((dish) => {
+      <div className="grid grid-cols-3 gap-12">
+        {data.map((dish) => {
+          const {id, name, price, img, alt} = dish
           return (
             <ProductItem
-              name={dish.name}
-              price={dish.price}
-              img={dish.img}
-              alt={dish.alt}
+              key={id}
+              name={name}
+              price={price}
+              img={img}
+              alt={alt}
             />
           );
         })}
