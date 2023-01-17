@@ -1,4 +1,6 @@
-import React, { Component, useState } from "react";
+import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
 import "./QuantityPicker.css";
 
 interface Props {
@@ -9,13 +11,13 @@ interface Props {
 
 const QuantityPicker: React.FC<Props> = ({ initialValue, max, min }) => {
   const [value, setValue] = useState<number>(initialValue);
-  const [disableDec, setDisableDec] = useState(false)
-  const [disableInc, setDisableInc] = useState(false)
+  const [disableDec, setDisableDec] = useState(false);
+  const [disableInc, setDisableInc] = useState(false);
 
   const increment = () => {
     const plusState = value + 1;
     if (value < max) {
-      setValue(plusState)
+      setValue(plusState);
     }
     if (value === max - 1) {
       setDisableInc(true);
@@ -28,12 +30,12 @@ const QuantityPicker: React.FC<Props> = ({ initialValue, max, min }) => {
   const decrement = () => {
     const minusState = value - 1;
     if (value > min) {
-      setValue(minusState)
+      setValue(minusState);
       if (value == min + 1) {
         setDisableDec(true);
       }
     } else {
-      setValue(min)
+      setValue(min);
     }
     if (value == max) {
       setDisableInc(false);
@@ -49,14 +51,13 @@ const QuantityPicker: React.FC<Props> = ({ initialValue, max, min }) => {
         }quantity-modifier modifier-left`}
         onClick={decrement}
       >
-        &ndash;
+        <FontAwesomeIcon
+          icon={faMinus}
+          className="h-1/2 3xl:h-8/18"
+          title="plus"
+        />
       </button>
-      <input
-        className="quantity-display"
-        type="text"
-        value={value}
-        readOnly
-      />
+      <input className="quantity-display" type="text" value={value} readOnly />
       <button
         type="button"
         className={`${
@@ -64,7 +65,11 @@ const QuantityPicker: React.FC<Props> = ({ initialValue, max, min }) => {
         }quantity-modifier modifier-right`}
         onClick={increment}
       >
-        &#xff0b;
+        <FontAwesomeIcon
+          icon={faPlus}
+          className="h-1/2 3xl:h-8/18"
+          title="plus"
+        />
       </button>
     </span>
   );

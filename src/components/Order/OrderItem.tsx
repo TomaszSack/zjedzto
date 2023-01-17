@@ -1,3 +1,5 @@
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import QuantityPicker from "components/QuantityPicker/QuantityPicker";
 
 interface Props {
@@ -5,7 +7,7 @@ interface Props {
   price: number;
   quantity: number;
   img: string;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick: React.MouseEventHandler<SVGSVGElement>;
 }
 
 const OrderItem: React.FC<Props> = ({
@@ -22,13 +24,11 @@ const OrderItem: React.FC<Props> = ({
         <div className="w-1/3 text-center">{name}</div>
         <div className="text-xl">{price} zł</div>
         <QuantityPicker min={0} max={9} initialValue={quantity} />
-        <button
-          type="button"
-          className="pr-4 text-red-400 font-bold text-2xl pb-2"
+        <FontAwesomeIcon
           onClick={onClick}
-        >
-          x
-        </button>
+          icon={faXmark}
+          className="h-1/3 text-red-400 pr-4 cursor-pointer"
+        />
       </div>
     </div>
   );
