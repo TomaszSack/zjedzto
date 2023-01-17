@@ -36,20 +36,9 @@ beforeEach(() => {
     ) as jest.Mock
   );
 });
-// const mockedFetch = jest.fn(() =>
-//   Promise.resolve({
-//     json: () => Promise.resolve(menu),
-//   })
-// ) as jest.Mock;
-
-// global.fetch = mockedFetch;
-
-// console.log(mockedFetch);
 
 test("should render fetched data", async () => {
   await render(<ProductsList />);
-  // await screen.findByText("Burger wołowy z bekonem");
-  // await expect(fetch).toHaveBeenCalledTimes(1);
   expect(
     await screen.findAllByAltText("soczysty burger wołowy z frytkami")
   ).toHaveLength(3);
