@@ -1,7 +1,7 @@
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import OrderPage from "pages/OrderPage";
-import { CartProvider } from "components/services/CartService";
+import { CartProvider } from "components/context/CartService";
 
 function App() {
   return (

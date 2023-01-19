@@ -6,7 +6,7 @@ import FormSection from "components/Order/FormSection";
 import OrderSection from "components/Order/OrderSection";
 import ContentContainer from "layout/ContentContainer";
 import PageWrapper from "layout/PageWrapper";
-import { useCart } from "components/services/CartService";
+import { useCart } from "components/context/CartService";
 
 interface Order {
   id: number;

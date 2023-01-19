@@ -1,11 +1,9 @@
 import SectionHeader from "components/SectionHeader";
 import OrderItem from "./OrderItem";
-import { useCart } from "components/services/CartService";
+import { useCart } from "components/context/CartService";
 
 const OrderSection = () => {
-  const {cartItems, cartAmount} = useCart()
-
-  console.log(cartItems)
+  const { cartItems, cartAmount } = useCart();
 
   return (
     <div className="h-5/6 w-1/2 pl-8">

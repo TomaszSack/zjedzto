@@ -1,5 +1,5 @@
 import Button from "components/Button";
-import { useCart } from "components/services/CartService";
+import { useCart } from "components/context/CartService";
 
 interface Props {
   id: number;
@@ -20,7 +20,11 @@ const ProductItem: React.FC<{ dish: Props }> = ({ dish }) => {
       <div className="flex flex-col items-center justify-between h-7/18 text-lg 3xl:text-2xl py-2 3xl:py-3">
         <div>{name}</div>
         <div>{price} zł</div>
-        <Button onClick={() => increaseCartQuantity(dish)} className="cursor-pointer" pink>
+        <Button
+          onClick={() => increaseCartQuantity(dish)}
+          className="cursor-pointer"
+          pink
+        >
           Dodaj
         </Button>
       </div>

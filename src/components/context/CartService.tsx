@@ -13,15 +13,13 @@ interface CartItem {
   name: string;
   price: number;
   img: string;
-  alt: string
+  alt: string;
   quantity: number;
 }
 
 interface CartService {
   getItemQuantity: (id: number) => number;
-  increaseCartQuantity: (
-    dish:Dish
-  ) => void;
+  increaseCartQuantity: (dish: Dish) => void;
   decreaseCartQuantity: (id: number) => void;
   removeFromCart: (id: number) => void;
   cartQuantity: number;
@@ -44,16 +42,16 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     0
   );
 
-  const cartAmount = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2)
+  const cartAmount = cartItems
+    .reduce((acc, item) => acc + item.price * item.quantity, 0)
+    .toFixed(2);
 
   const getItemQuantity = (id: number) => {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
   };
 
-  const increaseCartQuantity = (
-    dish:Dish
-  ) => {
-    const {id} = dish
+  const increaseCartQuantity = (dish: Dish) => {
+    const { id } = dish;
     setCartItems((currItems) => {
       if (currItems.find((item) => item.id === id) == null) {
         return [...currItems, { ...dish, quantity: 1 }];
