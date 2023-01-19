@@ -2,8 +2,10 @@ import logo from "assets/logo-wbg.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import ContentContainer from "layout/ContentContainer";
+import { useCart } from "./services/CartService";
 
 const Navbar = () => {
+  const {cartQuantity} = useCart();
   return (
     <div className="fixed h-16 3xl:h-20 w-full bg-white shadow-nav z-10">
       <ContentContainer className="flex items-center justify-between">
@@ -18,7 +20,7 @@ const Navbar = () => {
             className="h-full text-primary-pink"
             icon={faCartShopping}
           />
-          <div className="h-6 w-6 bg-secondary-pink rounded-full text-white text-center">1</div>
+          <div className="h-6 w-6 bg-secondary-pink rounded-full text-white text-center">{cartQuantity}</div>
         </div>
       </ContentContainer>
     </div>

@@ -6,7 +6,7 @@ const url = "http://localhost:3000/menu";
 interface Products {
   id: number;
   name: string;
-  price: string;
+  price: number;
   img: string;
   alt: string;
 }
@@ -32,14 +32,10 @@ const ProductsList = () => {
     <div className="flex justify-center">
       <div className="grid grid-cols-3 gap-12">
         {data.map((dish) => {
-          const { id, name, price, img, alt } = dish;
           return (
             <ProductItem
-              key={id}
-              name={name}
-              price={price}
-              img={img}
-              alt={alt}
+              key={dish.id}
+              dish={dish}
             />
           );
         })}
