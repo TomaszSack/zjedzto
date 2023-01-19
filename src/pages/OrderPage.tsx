@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 import Button from "components/Button";
 import FormSection from "components/Order/FormSection";
@@ -7,14 +7,6 @@ import OrderSection from "components/Order/OrderSection";
 import ContentContainer from "layout/ContentContainer";
 import PageWrapper from "layout/PageWrapper";
 import { useCart } from "components/context/CartService";
-
-interface Order {
-  id: number;
-  img: string;
-  title: string;
-  price: number;
-  quantity: number;
-}
 
 const OrderPage = () => {
   const {

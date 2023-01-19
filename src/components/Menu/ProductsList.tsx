@@ -17,14 +17,12 @@ const ProductsList = () => {
   useEffect(() => {
     try {
       const dataFetch = async () => {
-        const data = await (
-          await fetch(url)
-        ).json();
+        const data = await (await fetch(url)).json();
         setData(data);
       };
       dataFetch();
-    } catch {
-      (error: string) => console.error(error);
+    } catch (error: any) {
+      console.error(error);
     }
   }, []);
 
@@ -32,12 +30,7 @@ const ProductsList = () => {
     <div className="flex justify-center">
       <div className="grid grid-cols-3 gap-12">
         {data.map((dish) => {
-          return (
-            <ProductItem
-              key={dish.id}
-              dish={dish}
-            />
-          );
+          return <ProductItem key={dish.id} dish={dish} />;
         })}
       </div>
     </div>
