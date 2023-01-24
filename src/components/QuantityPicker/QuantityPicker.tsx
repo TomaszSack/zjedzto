@@ -18,13 +18,14 @@ interface Props {
   max: number;
   min: number;
   dish: DishProps;
+  small?:boolean;
 }
 
-const QuantityPicker: React.FC<Props> = ({ value, max, min, dish }) => {
+const QuantityPicker: React.FC<Props> = ({ value, max, min, dish, small }) => {
   const { increaseCartQuantity, decreaseCartQuantity } = useCart();
 
   return (
-    <span className="quantity-picker">
+    <span className={small ? "quantity-picker-small" : "quantity-picker"}>
       <button
         type="button"
         className={`${

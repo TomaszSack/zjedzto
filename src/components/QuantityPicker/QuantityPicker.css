@@ -7,6 +7,16 @@
   border-radius: 15px;
   vertical-align:middle;
 }
+
+.quantity-picker-small {
+    display: flex;
+    width: 20%;
+    height: 45%;
+    margin: .23rem;
+  border:1px solid #dfdfdf;
+  border-radius: 15px;
+  vertical-align:middle;
+}
 .quantity-input:focus {
   background: red;
 }

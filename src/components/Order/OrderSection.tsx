@@ -1,6 +1,7 @@
 import SectionHeader from "components/SectionHeader";
 import OrderItem from "./OrderItem";
 import { useCart } from "components/context/CartService";
+import Cart from "./Cart";
 
 const OrderSection = () => {
   const { cartItems, cartAmount } = useCart();
@@ -8,7 +9,7 @@ const OrderSection = () => {
   return (
     <div className="h-5/6 w-1/2 pl-8">
       <SectionHeader>Zamówienie</SectionHeader>
-      <div className="h-5/6 bg-white shadow-lg my-3 rounded-b-3xl pt-6">
+      {/* <div className="h-5/6 bg-white shadow-lg my-3 rounded-b-3xl pt-6">
         <div className="h-5/6">
           {cartItems.map((dish) => {
             return <OrderItem key={dish.id} dish={dish} />;
@@ -18,7 +19,8 @@ const OrderSection = () => {
           <div>Razem</div>
           <div>{cartAmount} zł</div>
         </div>
-      </div>
+      </div> */}
+      <Cart />
     </div>
   );
 };
