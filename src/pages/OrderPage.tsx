@@ -1,22 +1,12 @@
-import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 import Button from "components/Button";
 import FormSection from "components/Order/FormSection";
 import OrderSection from "components/Order/OrderSection";
 import ContentContainer from "layout/ContentContainer";
 import PageWrapper from "layout/PageWrapper";
-
-interface Order {
-  id: number;
-  img: string;
-  title: string;
-  price: number;
-  quantity: number;
-}
-
-const url = "http://localhost:3000/order";
+import { useCart } from "components/context/CartService";
 
 const OrderPage = () => {
   const {
@@ -25,20 +15,12 @@ const OrderPage = () => {
     formState: { errors },
   } = useForm();
 
-  const [data, setData] = useState<Order[]>([]);
-
-  useEffect(() => {
-    const dataFetch = async () => {
-      const data = await (await fetch(url)).json();
-      setData(data);
-    };
-    dataFetch();
-  }, []);
+  const { cartItems } = useCart();
 
   // const navigate = useNavigate();
 
   const onSubmit = (values: any) => {
-    values.order = data;
+    values.order = cartItems;
     console.log(values);
     // navigate("/");
   };
@@ -52,7 +34,7 @@ const OrderPage = () => {
             className="flex flex-wrap h-5/6 w-full pt-2"
           >
             <FormSection register={register} errors={errors} />
-            <OrderSection data={data} setData={setData} />
+            <OrderSection />
             <div className="flex flex-col justify-around items-center h-1/6 w-full">
               <div>
                 <button

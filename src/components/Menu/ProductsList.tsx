@@ -6,7 +6,7 @@ const url = "http://localhost:3000/menu";
 interface Products {
   id: number;
   name: string;
-  price: string;
+  price: number;
   img: string;
   alt: string;
 }
@@ -17,14 +17,12 @@ const ProductsList = () => {
   useEffect(() => {
     try {
       const dataFetch = async () => {
-        const data = await (
-          await fetch(url)
-        ).json();
+        const data = await (await fetch(url)).json();
         setData(data);
       };
       dataFetch();
-    } catch {
-      (error: string) => console.error(error);
+    } catch (error: any) {
+      console.error(error);
     }
   }, []);
 
@@ -32,16 +30,7 @@ const ProductsList = () => {
     <div className="flex justify-center">
       <div className="grid grid-cols-3 gap-12">
         {data.map((dish) => {
-          const { id, name, price, img, alt } = dish;
-          return (
-            <ProductItem
-              key={id}
-              name={name}
-              price={price}
-              img={img}
-              alt={alt}
-            />
-          );
+          return <ProductItem key={dish.id} dish={dish} />;
         })}
       </div>
     </div>
