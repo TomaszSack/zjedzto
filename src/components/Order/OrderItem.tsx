@@ -1,31 +1,31 @@
+import QuantityPicker from "components/QuantityPicker/QuantityPicker";
+import { useCart } from "components/context/CartService";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import QuantityPicker from "components/QuantityPicker/QuantityPicker";
 
-interface Props {
+interface DishProps {
+  id: number;
   name: string;
   price: number;
   quantity: number;
   img: string;
-  onClick: React.MouseEventHandler<SVGSVGElement>;
+  alt: string;
 }
 
-const OrderItem: React.FC<Props> = ({
-  img,
-  name,
-  price,
-  quantity,
-  onClick,
-}) => {
+const OrderItem: React.FC<{ dish: DishProps }> = ({ dish }) => {
+  const { removeFromCart } = useCart();
+
+  const { id, name, price, quantity, img, alt } = dish;
+
   return (
     <div className="w-5/6 h-3/18 m-auto bg-tertiary-orange p-1 mb-4 rounded-lg">
       <div className="flex items-center justify-between w-full h-full bg-white rounded-lg overflow-hidden">
-        <img src={img} className="h-full" />
+        <img src={img} alt={alt} className="h-full" />
         <div className="w-1/3 text-center">{name}</div>
         <div className="text-xl">{price} zł</div>
-        <QuantityPicker min={0} max={9} initialValue={quantity} />
+        <QuantityPicker min={0} max={9} value={quantity} dish={dish} />
         <FontAwesomeIcon
-          onClick={onClick}
+          onClick={() => removeFromCart(id)}
           icon={faXmark}
           className="h-1/3 text-red-400 pr-4 cursor-pointer"
         />

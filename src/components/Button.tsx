@@ -1,5 +1,6 @@
 interface Props {
   href?: string;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
   className?: string;
   pink?: boolean;
   cancel?: boolean;
@@ -9,11 +10,13 @@ interface Props {
 const Button: React.FC<Props> = ({
   className,
   href,
+  onClick,
   pink,
   cancel,
   children,
 }) => (
   <a
+    onClick={onClick}
     href={href}
     className={
       pink
