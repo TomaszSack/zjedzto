@@ -4,7 +4,7 @@ import { faFacebookSquare, faInstagram, faSquareTwitter } from "@fortawesome/fre
 
 const Footer = () => {
   return (
-    <div className="bg-primary-gray">
+    <div className="fixed bottom-0 w-full bg-primary-gray">
       <ContentContainer className="text-white text-4xl py-3 flex justify-between">
         <div className="text-white space-x-4">
           <FontAwesomeIcon icon={faFacebookSquare} />
