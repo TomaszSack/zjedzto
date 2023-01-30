@@ -8,21 +8,21 @@ const data = [
     name: "Burger wołowy z bekonem",
     price: 32.99,
     img: "assets/hero-img.jpeg",
-    alt: "soczysty burger wołowy z frytkami",
+    alt: "soczysty burger wołowy",
   },
   {
     id: 2,
     name: "Burger z kurczakiem",
     price: 30.99,
     img: "assets/hero-img.jpeg",
-    alt: "soczysty burger wołowy z frytkami",
+    alt: "soczysty burger z kurczaka",
   },
   {
     id: 3,
     name: "Burger wołowy na ostro",
     price: 35.99,
     img: "assets/hero-img.jpeg",
-    alt: "soczysty burger wołowy z frytkami",
+    alt: "soczysty burger wołowy na ostro",
   },
 ];
 
@@ -39,9 +39,9 @@ beforeEach(() => {
 
 test("should render fetched data", async () => {
   await render(<ProductsList />);
-  expect(
-    await screen.findAllByAltText("soczysty burger wołowy z frytkami")
-  ).toHaveLength(3);
+  for (let i = 0; i < data.length; i++) {
+    expect(await screen.findByAltText(data[i].alt)).toBeInTheDocument;
+  }
 });
 
 test("should link to order page", () => {
