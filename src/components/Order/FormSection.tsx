@@ -11,9 +11,9 @@ const FormSection: React.FC<{
   return (
     <div className="h-5/6 w-1/2 pr-8">
       <SectionHeader>Dane do dostawy</SectionHeader>
-      <FormAddressGroup register={register} errors={errors} />
-      <FormContactGroup register={register} errors={errors} />
-      <FormCommentGroup register={register} />
+      <FormAddressGroup {...{register, errors}} />
+      <FormContactGroup {...{register, errors}} />
+      <FormCommentGroup {...{register}} />
     </div>
   );
 };

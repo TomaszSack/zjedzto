@@ -43,6 +43,7 @@ const QuantityPicker: React.FC<Props> = ({ value, max, min, dish }) => {
         onClick={() => increaseCartQuantity(dish)}
       >
         <FontAwesomeIcon icon={faPlus} className="h-1/2" title="plus" />
+
       </button>
     </span>
   );
