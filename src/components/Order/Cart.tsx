@@ -24,7 +24,7 @@ const Cart: React.FC<{ small?: boolean }> = ({ small }) => {
           <>
             <Button
               href="/order"
-              className="text-sm px-3 pl-2 text-white flex justify-center"
+              className="text-sm 3xl:text-xs px-3 pl-2 text-white flex justify-center"
             >
               Zamawiam
               <FontAwesomeIcon
@@ -33,14 +33,14 @@ const Cart: React.FC<{ small?: boolean }> = ({ small }) => {
               />
             </Button>
             <div>
-              <div className={small ? "text-sm" : "text-xl"}>Razem</div>
+              <div className="text-sm 3xl:text-xs">Razem</div>
               <div>{cartAmount} zł</div>
             </div>
           </>
         )}
         {!small && (
           <>
-            <div className={small ? "text-sm" : "text-xl"}>Razem</div>
+            <div className="text-xl">Razem</div>
             <div>{cartAmount} zł</div>
           </>
         )}

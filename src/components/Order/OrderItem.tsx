@@ -21,8 +21,10 @@ const OrderItem: React.FC<{ dish: DishProps; small?: boolean }> = ({
   return (
     <div
       className={
-        "m-auto rounded-lg " +
-        (small ? "w-11/12 h-5/18 pb-1 mb-2 bg-secondary-pink" : "w-5/6 h-3/18 p-1 mb-4")
+        "m-auto rounded-lg bg-tertiary-orange " +
+        (small
+          ? "w-11/12 h-5/18 pb-1 mb-2"
+          : "w-5/6 h-3/18 p-1 mb-4")
       }
     >
       <div className="flex items-center justify-between w-full h-full bg-white rounded-lg overflow-hidden">
