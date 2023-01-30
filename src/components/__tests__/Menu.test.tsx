@@ -40,7 +40,7 @@ beforeEach(() => {
 test("should render fetched data", async () => {
   await render(<ProductsList />);
   for (let i = 0; i < data.length; i++) {
-    expect(await screen.findByAltText(data[i].alt)).toBeInTheDocument;
+    await expect(await screen.findByAltText(data[i].alt)).toBeInTheDocument;
   }
 });
 

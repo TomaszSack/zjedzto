@@ -35,12 +35,12 @@ const OrderPage = () => {
     dataFetch();
   }, []);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const onSubmit = (values: any) => {
     values.order = data;
     console.log(values);
-    navigate("/");
+    // navigate("/");
   };
 
   return (
@@ -52,10 +52,7 @@ const OrderPage = () => {
             className="flex flex-wrap h-5/6 w-full pt-2"
           >
             <FormSection register={register} errors={errors} />
-            <OrderSection
-              data={data}
-              setData={setData}
-            />
+            <OrderSection data={data} setData={setData} />
             <div className="flex flex-col justify-around items-center h-1/6 w-full">
               <div>
                 <button
