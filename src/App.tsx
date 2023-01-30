@@ -2,6 +2,7 @@ import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import OrderPage from "pages/OrderPage";
 import { CartProvider } from "components/context/CartService";
+import SummaryPage from "pages/SummaryPage";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/order" element={<OrderPage />} />
+          <Route path="/summary" element={<SummaryPage />} />
         </Routes>
       </CartProvider>
     </Router>

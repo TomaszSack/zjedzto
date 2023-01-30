@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "components/Button";
 import FormSection from "components/Order/FormSection";
 import OrderSection from "components/Order/OrderSection";
@@ -16,12 +16,12 @@ const OrderPage = () => {
 
   const { cartItems } = useCart();
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const onSubmit = (values: any) => {
     values.order = cartItems;
     console.log(values);
-    // navigate("/");
+    navigate("/summary");
   };
 
   return (
