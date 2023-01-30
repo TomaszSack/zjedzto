@@ -44,7 +44,7 @@ test("should render fetched data", async () => {
   ).toHaveLength(3);
 });
 
-test("should navigate to order page", () => {
+test("should link to order page", () => {
   const { getByText } = render(<MenuSection />);
   expect(getByText("Zamawiam").closest("a")).toHaveAttribute("href", "/order");
 });
