@@ -4,15 +4,11 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import ContentContainer from "layout/ContentContainer";
 import { useCart } from "./context/CartService";
 import { useState } from "react";
-import OrderSection from "./Order/OrderSection";
-import OrderItem from "./Order/OrderItem";
 import Cart from "./Order/Cart";
 
 const Navbar = () => {
-  const { cartQuantity, cartItems, cartAmount } = useCart();
+  const { cartQuantity } = useCart();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-
-  console.log(menuIsOpen);
 
   return (
     <div className="fixed h-16 3xl:h-20 w-full bg-white shadow-nav z-10">

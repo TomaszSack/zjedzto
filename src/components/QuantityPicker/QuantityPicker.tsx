@@ -1,8 +1,8 @@
+import { useCart } from "components/context/CartService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
 import "./QuantityPicker.css";
-import { useCart } from "components/context/CartService";
 
 interface DishProps {
   id: number;
