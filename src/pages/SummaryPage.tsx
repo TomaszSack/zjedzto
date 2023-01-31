@@ -20,7 +20,7 @@ const SummaryPage = () => {
                 </button>
               </div>
               <div>
-                <Button href="/" cancel>
+                <Button href="/order" cancel>
                   Anuluj
                 </Button>
               </div>

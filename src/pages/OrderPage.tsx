@@ -14,13 +14,13 @@ const OrderPage = () => {
     formState: { errors },
   } = useForm();
 
-  const { cartItems } = useCart();
+  const { cartItems, setOrderItems } = useCart();
 
   const navigate = useNavigate();
 
   const onSubmit = (values: any) => {
     values.order = cartItems;
-    console.log(values);
+    setOrderItems(values)
     navigate("/summary");
   };
 

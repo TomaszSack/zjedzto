@@ -7,7 +7,7 @@ import ContactSummary from "./ContactSummary";
 import SummaryOrderItem from "./SummaryOrderItem";
 
 const SummarySection = () => {
-  const { cartTotalPrice } = useCart();
+  const { cartTotalPrice, orderItems } = useCart();
 
   return (
     <>
