@@ -25,7 +25,7 @@ const Hero = () => {
       </div>
       <a href="#menu" data-testid="arrow-navigator">
         <FontAwesomeIcon
-          className="bounce-top absolute right-1/2 bottom-4 h-10 translate-x-1/2 text-secondary-orange"
+          className="bounce-top absolute right-1/2 bottom-16 h-10 translate-x-1/2 text-secondary-orange"
           icon={faChevronDown}
         />
       </a>
