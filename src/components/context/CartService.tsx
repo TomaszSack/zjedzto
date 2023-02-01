@@ -19,18 +19,18 @@ interface CartItem {
 }
 
 interface OrderItem {
-  apartment_number:string;
-  city:string;
-  comment:string;
-  email:string;
-  first_name:string;
-  floor:string;
-  house_number:string;
-  order:CartItem[];
-  phone_number:string;
-  postcode:string;
-  street:string;
-  surname:string
+  apartment_number: string;
+  city: string;
+  comment: string;
+  email: string;
+  first_name: string;
+  floor: string;
+  house_number: string;
+  order: CartItem[];
+  phone_number: string;
+  postcode: string;
+  street: string;
+  surname: string;
 }
 
 interface CartService {
@@ -41,20 +41,28 @@ interface CartService {
   cartQuantity: number;
   cartTotalPrice: string;
   cartItems: CartItem[];
-  orderItems:OrderItem | undefined;
-  setOrderItems:(value: OrderItem) => void
+  orderItems: OrderItem | undefined;
+  setOrderItems: (value: OrderItem) => void;
 }
 
 const CartContext = createContext({} as CartService);
 
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
-  const initialState = JSON.parse(localStorage.getItem("cart") || "");
-  const [cartItems, setCartItems] = useState<CartItem[]>(initialState);
-  const [orderItems, setOrderItems] = useState<OrderItem>()
+  const storageCart = localStorage.getItem("cart");
+  const storageOrder = localStorage.getItem("order");
+  const initialCart = storageCart ? JSON.parse(storageCart) : [];
+  const initialOrder = storageOrder ? JSON.parse(storageOrder) : {}
+
+  const [cartItems, setCartItems] = useState<CartItem[]>(initialCart);
+  const [orderItems, setOrderItems] = useState<OrderItem>(initialOrder);
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
+
+  useEffect(() => {
+    localStorage.setItem("order", JSON.stringify(orderItems));
+  }, [orderItems]);
 
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity + quantity,
@@ -120,7 +128,6 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         cartTotalPrice,
         orderItems,
         setOrderItems,
-
       }}
     >
       {children}
