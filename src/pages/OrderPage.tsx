@@ -33,6 +33,7 @@ const OrderPage = () => {
 
   const onSubmit = (values: any) => {
     values.order = cartItems;
+    values.id = Date.now();
     setOrderItems(values);
     navigate("/summary");
   };
