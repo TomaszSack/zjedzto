@@ -50,10 +50,17 @@ const SummarySection = () => {
         <GroupHeader>Zamówienie</GroupHeader>
         <div className="h-4/6 text-2xl">
           {order.map((dish) => {
-            return <SummaryOrderItem key={dish.id} quantity={dish.quantity} name={dish.name} price={dish.price} />;
+            return (
+              <SummaryOrderItem
+                key={dish.id}
+                quantity={dish.quantity}
+                name={dish.name}
+                price={dish.price}
+              />
+            );
           })}
         </div>
-        <div className="flex items-center justify-between h-1/6 w-1/6 border-t border-primary-gray ml-auto text-xl p-3">
+        <div className="flex items-center justify-between h-1/6 w-3/12 border-t border-primary-gray ml-auto text-3xl p-3">
           <div>Razem</div>
           <div>{cartTotalPrice} zł</div>
         </div>

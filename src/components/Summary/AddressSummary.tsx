@@ -13,7 +13,7 @@ const AddressSummary: React.FC<Props> = ({ street, house, apartment, floor, post
   return (
     <div className="w-1/3">
       <GroupHeader>Adres</GroupHeader>
-      <div className="w-full h-5/6 p-4 text-3xl 3xl:text-4xl space-y-2">
+      <div className="w-full h-5/6 p-4 text-3xl space-y-2">
         <p>ul.{street} {house}</p>
         <p>{apartment && `lokal ${apartment}`}, {floor && `piętro ${floor}`}</p>
         <p>{postcode} {city}</p>
