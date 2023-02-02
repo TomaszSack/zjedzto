@@ -8,19 +8,32 @@ import PageWrapper from "layout/PageWrapper";
 import { useCart } from "components/context/CartService";
 
 const OrderPage = () => {
+  const { cartItems, setOrderItems, orderItems } = useCart();
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
-
-  const { cartItems, setOrderItems } = useCart();
+  } = useForm<any>({
+    defaultValues: {
+      apartment_number: orderItems?.apartment_number,
+      city: orderItems?.city,
+      comment: orderItems?.comment,
+      email: orderItems?.email,
+      first_name: orderItems?.first_name,
+      floor: orderItems?.floor,
+      house_number: orderItems?.house_number,
+      phone_number: orderItems?.phone_number,
+      postcode: orderItems?.postcode,
+      street: orderItems?.street,
+      surname: orderItems?.surname,
+    },
+  });
 
   const navigate = useNavigate();
 
   const onSubmit = (values: any) => {
     values.order = cartItems;
-    setOrderItems(values)
+    setOrderItems(values);
     navigate("/summary");
   };
 
