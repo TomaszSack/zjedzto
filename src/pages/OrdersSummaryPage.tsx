@@ -57,7 +57,7 @@ const OrdersSummaryPage = () => {
             .map((order, index, array) => {
               const i =array.length  - index
               return (
-                <OrdersSummaryItem key={order.id} order={order} orderId={i} />
+                <OrdersSummaryItem key={i} order={order} orderId={i} />
               );
             })}
         </ContentContainer>

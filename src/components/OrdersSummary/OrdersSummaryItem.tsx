@@ -34,10 +34,10 @@ const OrdersSummaryItem: React.FC<{ order: OrderItem, orderId:number }> = ({ ord
       </div>
       <div className="flex justify-around items-center w-10/12 text-2xl text-center">
         <div className="flex justify-center w-2/3">
-          {order.order.map((item) => {
+          {order.order.map((item, index, array) => {
             return (
               <p key={item.id}>
-                {item.quantity}x {item.name},&nbsp;
+                {item.quantity}x {item.name}{array.length - 1 !== index && (`,${'\u00A0'}`)}
               </p>
             );
           })}
