@@ -38,8 +38,6 @@ const OrdersSummaryItem: React.FC<{ order: OrderItem; orderId: number }> = ({
     .reduce((acc, item) => acc + item.price * item.quantity, 0)
     .toFixed(2);
 
-  console.log(order);
-
   return (
     <div
       className={`flex w-full bg-white my-8 rounded-3xl overflow-hidden transition-all ${
@@ -67,11 +65,11 @@ const OrdersSummaryItem: React.FC<{ order: OrderItem; orderId: number }> = ({
           </div>
         </div>
         <div
-          className={`flex justify-around items-center w-full transition-all text-xl text-center ${
+          className={`flex justify-around items-center w-full transition-all text-xl text-center px-8 ${
             !isOpen ? "h-0 z-minus" : "h-40"
           }`}
         >
-          <div>
+          <div className="w-1/3">
             <h3 className="pb-2 font-bold">Dane dostawy</h3>
             <p>
               ul.{order.street} {order.house_number}
@@ -83,7 +81,7 @@ const OrdersSummaryItem: React.FC<{ order: OrderItem; orderId: number }> = ({
               {order.postcode} {order.city}
             </p>
           </div>
-          <div>
+          <div className="w-1/3">
             <h3 className="pb-2 font-bold">Kontakt</h3>
             <p>
               {order.first_name} {order.surname}
@@ -91,7 +89,7 @@ const OrdersSummaryItem: React.FC<{ order: OrderItem; orderId: number }> = ({
             <p>{order.phone_number}</p>
             <p>{order.email}</p>
           </div>
-          <div>
+          <div className="w-1/3">
             <h3 className="pb-2 font-bold">Komentarz</h3>
             <p>{order.comment}</p>
           </div>
