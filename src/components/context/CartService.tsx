@@ -43,6 +43,7 @@ interface CartService {
   cartItems: CartItem[];
   orderItems: OrderItem | undefined;
   setOrderItems: (value: OrderItem) => void;
+  setCartItems: (value: CartItem[]) => void;
 }
 
 const CartContext = createContext({} as CartService);
@@ -128,6 +129,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         cartTotalPrice,
         orderItems,
         setOrderItems,
+        setCartItems,
       }}
     >
       {children}

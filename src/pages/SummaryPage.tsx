@@ -6,8 +6,23 @@ import PageWrapper from "layout/PageWrapper";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
+const defaultOrder = {
+  apartment_number: "",
+  city: "",
+  comment: "",
+  email: "",
+  first_name: "",
+  floor: "",
+  house_number: "",
+  order: [],
+  phone_number: "",
+  postcode: "",
+  street: "",
+  surname: "",
+};
+
 const SummaryPage = () => {
-  const { orderItems } = useCart();
+  const { orderItems, setCartItems, setOrderItems } = useCart();
 
   const navigate = useNavigate();
 
@@ -20,6 +35,10 @@ const SummaryPage = () => {
       };
       fetch("http://localhost:3000/orders", requestOptions)
         .then(() => navigate("/"))
+        .then(() => {
+          setCartItems([]);
+          setOrderItems(defaultOrder);
+        })
         .then(() =>
           toast.success("Zamówienie zostało przekazane do realizacji!")
         );
