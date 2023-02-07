@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 interface CartItem {
   id: number;
   name: string;
@@ -22,36 +24,84 @@ interface OrderItem {
   surname: string;
   id: number;
 }
-const OrdersSummaryItem: React.FC<{ order: OrderItem, orderId:number }> = ({ order, orderId }) => {
+const OrdersSummaryItem: React.FC<{ order: OrderItem; orderId: number }> = ({
+  order,
+  orderId,
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const accordionHandler = () => {
+    setIsOpen(!isOpen);
+  };
+
   const totalPrice = order.order
     .reduce((acc, item) => acc + item.price * item.quantity, 0)
     .toFixed(2);
 
+  console.log(order);
+
   return (
-    <div className="flex w-full h-20 bg-white my-8 rounded-3xl overflow-hidden">
+    <div
+      className={`flex w-full bg-white my-8 rounded-3xl overflow-hidden transition-all ${
+        isOpen ? "h-60" : "h-20"
+      }`}
+    >
       <div className="flex justify-center items-center h-full w-1/12 bg-tertiary-orange text-white font-bold text-4xl">
         #{orderId}
       </div>
-      <div className="flex justify-around items-center w-10/12 text-2xl text-center">
-        <div className="flex justify-center w-2/3">
-          {order.order.map((item, index) => {
-            return (
-              <p key={item.id}>
-                {index ? ', ': ''}{item.quantity}x {item.name}
-              </p>
-            );
-          })}
+      <div className="flex flex-col w-10/12">
+        <div className="flex justify-around items-center w-full text-2xl text-center h-20">
+          <div className="flex justify-center w-2/3">
+            {order.order.map((item, index) => {
+              return (
+                <p key={item.id}>
+                  {index ? ", " : ""}
+                  {item.quantity}x {item.name}
+                </p>
+              );
+            })}
+          </div>
+          <div className="w-1/6">{totalPrice} zł</div>
+          <div className="w-1/6">
+            {new Date(order.id).toLocaleDateString("en-GB")}
+          </div>
         </div>
-        <div className="w-1/6">{totalPrice} zł</div>
-        <div className="w-1/6">
-          {new Date(order.id).toLocaleDateString("en-GB")}
+        <div
+          className={`flex justify-around items-center w-full transition-all text-xl text-center ${
+            !isOpen ? "h-0 z-minus" : "h-40"
+          }`}
+        >
+          <div>
+            <h3 className="pb-2 font-bold">Dane dostawy</h3>
+            <p>
+              ul.{order.street} {order.house_number}
+            </p>
+            <p>
+              lokal {order.apartment_number}, piętro {order.floor}
+            </p>
+            <p>
+              {order.postcode} {order.city}
+            </p>
+          </div>
+          <div>
+            <h3 className="pb-2 font-bold">Kontakt</h3>
+            <p>
+              {order.first_name} {order.surname}
+            </p>
+            <p>{order.phone_number}</p>
+            <p>{order.email}</p>
+          </div>
+          <div>
+            <h3 className="pb-2 font-bold">Komentarz</h3>
+            <p>{order.comment}</p>
+          </div>
         </div>
       </div>
       <button
-        onClick={() => console.log("szczegóły")}
+        onClick={accordionHandler}
         className="flex justify-center items-center h-full w-1/12 bg-secondary-pink text-white text-2xl"
       >
-        Szczegóły
+        {!isOpen ? "Szczegóły" : "Pokaż mniej"}
       </button>
     </div>
   );
