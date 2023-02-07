@@ -147,6 +147,46 @@
         }
       ],
       "id": 1675774782050
+    },
+    {
+      "apartment_number": "",
+      "city": "Wysokie",
+      "comment": "",
+      "email": "ząbekstefanek@mail.com",
+      "first_name": "Stefan",
+      "floor": "",
+      "house_number": "56",
+      "phone_number": "123123123",
+      "postcode": "12-112",
+      "street": "Zakolska",
+      "surname": "Ząbek",
+      "order": [
+        {
+          "id": 3,
+          "name": "Burger wołowy na ostro",
+          "price": 35.99,
+          "img": "assets/hero-img.jpeg",
+          "alt": "soczysty burger wołowy z frytkami",
+          "quantity": 2
+        },
+        {
+          "id": 5,
+          "name": "Frytki",
+          "price": 6.99,
+          "img": "assets/hero-img.jpeg",
+          "alt": "soczysty burger wołowy z frytkami",
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "name": "Burger z kurczakiem",
+          "price": 30.99,
+          "img": "assets/hero-img.jpeg",
+          "alt": "soczysty burger wołowy z frytkami",
+          "quantity": 1
+        }
+      ],
+      "id": 1675779312181
     }
   ]
 }

@@ -20,7 +20,7 @@ const Navbar = () => {
         <div className="flex items-center h-2/6">
           <FontAwesomeIcon
             onClick={() => navigate("orders-summary")}
-            className="h-full text-primary-pink h-8 mr-8 cursor-pointer"
+            className="h-full text-primary-pink h-8 mr-8 cursor-pointer transition-all hover:scale-125"
             icon={faReceipt}
           />
           <FontAwesomeIcon
