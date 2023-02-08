@@ -17,22 +17,24 @@ const ProductsList = () => {
   const sortingFunc = (sorting: string) => {
     switch (sorting) {
       case "name-asc":
-        return "http://localhost:3000/menu?_sort=name&_order=asc";
-      case "name-dec":
-        return "http://localhost:3000/menu?_sort=name&_order=desc";
+        return "?_sort=name&_order=asc";
+      case "name-desc":
+        return "?_sort=name&_order=desc";
       case "price-asc":
-        return "http://localhost:3000/menu?_sort=price&_order=asc";
+        return "?_sort=price&_order=asc";
       case "price-desc":
-        return "http://localhost:3000/menu?_sort=price&_order=desc";
+        return "?_sort=price&_order=desc";
       default:
-        return "http://localhost:3000/menu";
+        return "";
     }
   };
 
   useEffect(() => {
     try {
       const dataFetch = async () => {
-        const data = await (await fetch(sortingFunc(sorting))).json();
+        const data = await(
+          await fetch(`http://localhost:3000/menu${sortingFunc(sorting)}`)
+        ).json();
         setData(data);
       };
       dataFetch();
