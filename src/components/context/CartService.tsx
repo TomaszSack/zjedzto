@@ -59,7 +59,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>(initialCart);
   const [orderItems, setOrderItems] = useState<OrderItem>(initialOrder);
 
-  const [sorting, setSorting] = useState('');
+  const [sorting, setSorting] = useState('name-asc');
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
