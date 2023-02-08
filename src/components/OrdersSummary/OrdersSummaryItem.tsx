@@ -49,7 +49,7 @@ const OrdersSummaryItem: React.FC<{ order: OrderItem; orderId: number }> = ({
       </div>
       <div className="flex flex-col w-10/12">
         <div className="flex justify-around items-center w-full text-2xl text-center h-20">
-          <div className="flex justify-center w-2/3">
+          <div className="flex justify-start w-2/3 pl-12">
             {order.order.map((item, index) => {
               return (
                 <p key={item.id}>
@@ -65,7 +65,7 @@ const OrdersSummaryItem: React.FC<{ order: OrderItem; orderId: number }> = ({
           </div>
         </div>
         <div
-          className={`flex justify-around items-center w-full transition-all text-xl text-center px-8 ${
+          className={`flex justify-around items-start w-full transition-all text-xl text-center px-8 ${
             !isOpen ? "h-0 z-minus" : "h-40"
           }`}
         >
@@ -75,7 +75,7 @@ const OrdersSummaryItem: React.FC<{ order: OrderItem; orderId: number }> = ({
               ul.{order.street} {order.house_number}
             </p>
             <p>
-              lokal {order.apartment_number}, piętro {order.floor}
+              {order.apartment_number && `lokal ${order.apartment_number},`} {order.floor && `piętro ${order.floor}`}
             </p>
             <p>
               {order.postcode} {order.city}
