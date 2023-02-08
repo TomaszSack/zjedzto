@@ -48,20 +48,16 @@ const OrdersSummaryPage = () => {
 
   return (
     <PageWrapper>
-      <div className="h-screen bg-primary-white">
-        <ContentContainer className="pt-32">
-          <SectionHeader>Twoje zamówienia</SectionHeader>
-          {data
-            .slice(0)
-            .reverse()
-            .map((order, index, array) => {
-              const i =array.length  - index
-              return (
-                <OrdersSummaryItem key={i} order={order} orderId={i} />
-              );
-            })}
-        </ContentContainer>
-      </div>
+      <ContentContainer className="pt-32 pb-24">
+        <SectionHeader>Twoje zamówienia</SectionHeader>
+        {data
+          .slice(0)
+          .reverse()
+          .map((order, index, array) => {
+            const i = array.length - index;
+            return <OrdersSummaryItem key={i} order={order} orderId={i} />;
+          })}
+      </ContentContainer>
     </PageWrapper>
   );
 };
