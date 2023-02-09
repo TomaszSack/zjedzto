@@ -2,9 +2,6 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    screens: {
-      '3xl': '2300px',
-    },
     extend: {
       colors: {
         "primary-orange": "#FE9305",
@@ -19,7 +16,7 @@ module.exports = {
         nav: "0 0px 25px 0px rgba(0, 0, 0, 0.3)",
       },
       zIndex: {
-        "minus": "-5",
+        minus: "-5",
       },
       height: {
         "1/18": "5.5%",
@@ -39,6 +36,9 @@ module.exports = {
         "15/18": "83.3%",
         "16/18": "88.8%",
         "17/18": "94.4%",
+      },
+      screens: {
+        "3xl": "2300px",
       },
     },
   },

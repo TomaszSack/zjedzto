@@ -45,7 +45,7 @@ const ProductsList = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="grid grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6 lg:gap-12">
         {data.map((dish) => {
           return <ProductItem key={dish.id} dish={dish} />;
         })}
