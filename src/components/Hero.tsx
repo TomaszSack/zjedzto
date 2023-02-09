@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <div className="flex justify-end h-screen">
       <img
-        className="absolute bottom-0 pb-12 lg:left-0 h-8/18 bg-cover lg:w-auto lg:h-screen z-minus"
+        className="absolute bottom-0 pb-12 lg:left-0 bg-cover lg:w-auto lg:h-screen z-minus"
         src={HeroImg}
         alt="soczysty burger z bekonem"
       />

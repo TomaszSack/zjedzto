@@ -40,15 +40,15 @@ const OrderPage = () => {
 
   return (
     <PageWrapper>
-      <div className="h-screen bg-primary-white">
-        <ContentContainer className="flex flex-wrap items-center">
+      <div className="h-screen bg-primary-white pt-20 lg:pt-0">
+        <ContentContainer className="flex lg:flex-wrap lg:items-center">
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-wrap h-5/6 w-full pt-2"
+            className="flex flex-wrap w-full h-5/6 lg:h-5/6 w-full pt-2"
           >
             <FormSection register={register} errors={errors} />
             <OrderSection />
-            <div className="flex flex-col justify-around items-center h-1/6 w-full">
+            <div className="flex flex-col justify-around items-center h-36 lg:h-1/6 w-full order-3 pb-12">
               <div>
                 <button
                   type="submit"

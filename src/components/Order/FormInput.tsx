@@ -18,7 +18,7 @@ const FormInput: React.FC<Props> = ({
   errors,
 }) => {
   return (
-    <div className="p-1">
+    <div className="lg:p-1">
       <div className="flex justify-between">
         <label htmlFor={name} className="text-xs">
           {children}
@@ -33,7 +33,7 @@ const FormInput: React.FC<Props> = ({
         id={name}
         aria-label={name}
         {...register(name, { required })}
-        className={`h-6 3xl:h-8 w-64 border border-primary-gray ${className}`}
+        className={`h-5 3xl:h-8 w-36 lg:w-64 border border-primary-gray ${className}`}
       ></input>
     </div>
   );

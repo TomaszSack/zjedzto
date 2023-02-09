@@ -9,7 +9,7 @@ const FormSection: React.FC<{
   errors: FieldErrors<FieldValues>;
 }> = ({ register, errors }) => {
   return (
-    <div className="h-5/6 w-1/2 pr-8">
+    <div className="h-5/6 w-full lg:w-1/2 px-2 pt-6 lg:pt-0 lg:pr-8 order-2 lg:order-1">
       <SectionHeader>Dane do dostawy</SectionHeader>
       <FormAddressGroup {...{register, errors}} />
       <FormContactGroup {...{register, errors}} />
