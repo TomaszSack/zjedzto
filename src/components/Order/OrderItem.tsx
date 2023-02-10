@@ -18,7 +18,7 @@ const OrderItem: React.FC<{ dish: DishProps }> = ({ dish }) => {
   const { id, name, price, quantity, img, alt } = dish;
 
   return (
-    <div className="lg:w-5/6 h-16 lg:h-3/18 bg-tertiary-orange p-1 m-3 lg:m-auto lg:mb-4 rounded-lg">
+    <div className="lg:w-5/6 h-16 lg:h-3/18 bg-tertiary-orange p-1 m-3 sm:mx-8 lg:m-auto lg:mb-4 rounded-lg">
       <div className="flex items-center justify-between w-full h-full bg-white rounded-lg overflow-hidden">
         <img src={img} alt={alt} className="h-full" />
         <div className="w-1/4 lg:w-1/3 text-sm lg:text-lg text-center">

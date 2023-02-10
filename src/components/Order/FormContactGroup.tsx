@@ -7,7 +7,7 @@ const FormContactGroup: React.FC<{
   errors: FieldErrors<FieldValues>;
 }> = ({ register, errors }) => {
   return (
-    <div className="bg-white shadow-lg my-2 lg:my-3 3xl:my-6">
+    <div className="bg-white shadow-lg my-2 sm:my-3 3xl:my-6">
       <GroupHeader>Kontakt</GroupHeader>
       <div className="grid grid-cols-2 px-8 pb-2 lg:pb-4">
         <FormInput
