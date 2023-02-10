@@ -48,7 +48,7 @@ const OrdersSummaryPage = () => {
 
   return (
     <PageWrapper>
-      <ContentContainer className="pt-32 pb-24">
+      <ContentContainer className="px-2 py-20 lg:pt-32 lg:pb-24">
         <SectionHeader>Twoje zamówienia</SectionHeader>
         {data
           .slice(0)
