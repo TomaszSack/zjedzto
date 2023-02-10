@@ -44,17 +44,17 @@ const OrdersSummaryItem: React.FC<{ order: OrderItem; orderId: number }> = ({
         isOpen ? "h-60" : "h-20"
       }`}
     >
-      <div className="flex justify-center items-center h-full w-1/12 lg:w-1/12 bg-tertiary-orange text-white font-bold text-xl lg:text-4xl">
+      <div className="flex justify-center items-center h-full w-1/12 xl:w-1/12 bg-tertiary-orange text-white font-bold text-xl lg:text-2xl xl:text-4xl">
         #{orderId}
       </div>
-      <div className="flex flex-col w-9/12 lg:w-10/12">
-        <div className="flex flex-wrap lg:justify-around items-center w-full text-sm lg:text-2xl text-center h-20 px-2">
-          <div className="flex flex-wrap w-full lg:w-2/3">
+      <div className="flex flex-col w-9/12 xl:w-10/12">
+        <div className="flex flex-wrap lg:justify-around items-center w-full text-sm sm:text-base lg:text-lg xl:text-2xl text-center h-20 px-2">
+          <div className="flex flex-wrap w-full xl:w-2/3">
             {order.order.map((item, index, arr) => {
               return (
                 <p key={item.id}>
                   {item.quantity}x {item.name}
-                  {index+1<arr.length ? ", " : ""}
+                  {index + 1 < arr.length ? ", " : ""}
                 </p>
               );
             })}
@@ -65,7 +65,7 @@ const OrdersSummaryItem: React.FC<{ order: OrderItem; orderId: number }> = ({
           </div>
         </div>
         <div
-          className={`flex flex-wrap justify-around w-full transition-all text-sm lg:text-xl text-center break-words lg:px-8 ${
+          className={`flex flex-wrap justify-around w-full transition-all text-sm sm:text-base xl:text-xl text-center break-words xl:px-8 ${
             !isOpen ? "h-0 z-minus" : "h-40"
           }`}
         >
@@ -97,7 +97,7 @@ const OrdersSummaryItem: React.FC<{ order: OrderItem; orderId: number }> = ({
       </div>
       <button
         onClick={accordionHandler}
-        className="flex justify-center items-center h-full w-2/12 lg:w-1/12 bg-secondary-pink text-white text-sm lg:text-2xl"
+        className="flex justify-center items-center h-full w-2/12 xl:w-1/12 bg-secondary-pink text-white text-sm lg:text-xl xl:text-2xl"
       >
         {!isOpen ? "Szczegóły" : "Pokaż mniej"}
       </button>

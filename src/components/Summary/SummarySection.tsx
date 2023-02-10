@@ -48,7 +48,7 @@ const SummarySection = () => {
       </div>
       <div className="bg-white h-7/18 my-4 shadow-lg rounded-b-3xl">
         <GroupHeader>Zamówienie</GroupHeader>
-        <div className="h-4/6 lg:text-2xl">
+        <div className="h-4/6">
           {order.map((dish) => {
             return (
               <SummaryOrderItem
@@ -60,7 +60,7 @@ const SummarySection = () => {
             );
           })}
         </div>
-        <div className="flex items-center justify-between h-1/6 w-1/2 lg:w-3/12 border-t border-primary-gray ml-auto lg:text-3xl p-3">
+        <div className="flex items-center justify-between h-1/6 w-1/2 lg:w-3/12 border-t border-primary-gray ml-auto sm:text-xl xl:text-3xl p-3">
           <div>Razem</div>
           <div>{cartTotalPrice} zł</div>
         </div>
