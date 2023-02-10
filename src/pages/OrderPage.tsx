@@ -52,7 +52,7 @@ const OrderPage = () => {
               <div>
                 <button
                   type="submit"
-                  className="bg-secondary-pink py-2 px-10 text-white text-2xl 3xl:text-3xl rounded-2xl"
+                  className="bg-secondary-pink py-2 px-10 text-white text-xl 3xl:text-3xl rounded-2xl"
                 >
                   Zamawiam
                 </button>
