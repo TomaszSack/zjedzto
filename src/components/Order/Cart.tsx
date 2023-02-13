@@ -9,7 +9,7 @@ const Cart: React.FC<{ small?: boolean }> = ({ small }) => {
 
   return (
     <div className="h-5/6 bg-white shadow-lg my-3 rounded-b-3xl pt-3 lg:pt-6">
-      <div className={!small ? "h-5/6" : "h-4/5"}>
+      <div className={!small ? "h-5/6 overflow-auto" : "h-4/5 overflow-auto"}>
         {cartItems.map((dish) => {
           return <OrderItem key={dish.id} dish={dish} small={small} />;
         })}
@@ -24,7 +24,7 @@ const Cart: React.FC<{ small?: boolean }> = ({ small }) => {
           <>
             <Button
               href="/order"
-              className="text-sm 3xl:text-xs px-3 pl-2 text-white flex justify-center"
+              className="text-xs lg:text-xs 3xl:text-xs px-3 pl-2 text-white flex justify-center"
             >
               Zamawiam
               <FontAwesomeIcon
@@ -33,8 +33,8 @@ const Cart: React.FC<{ small?: boolean }> = ({ small }) => {
               />
             </Button>
             <div>
-              <div className="text-sm 3xl:text-xs">Razem</div>
-              <div>{cartTotalPrice} zł</div>
+              <div className="text-xs lg:text-sm">Razem</div>
+              <div className="text-sm lg:text-lg">{cartTotalPrice} zł</div>
             </div>
           </>
         )}

@@ -10,7 +10,7 @@
 
 .quantity-picker-small {
     display: flex;
-    width: 20%;
+    width: 30%;
     height: 55%;
     margin: .23rem;
   border:1px solid #dfdfdf;
@@ -70,4 +70,10 @@
   border-top: 0 solid #dbdbdb;
   border-bottom: 0 solid #dbdbdb;
   text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+.quantity-picker-small {
+  width: 20%;
+}
 }

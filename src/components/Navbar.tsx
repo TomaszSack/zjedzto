@@ -41,7 +41,7 @@ const Navbar = () => {
           </div>
           {menuIsOpen && (
             <div
-              className="absolute w-80 h-80 top-full left-minus36"
+              className="absolute w-52 sm:w-64 lg:w-80 h-80 xl:h-96 top-full left-minus36"
               onMouseEnter={() => setMenuIsOpen(true)}
               onMouseLeave={() => setMenuIsOpen(false)}
             >
