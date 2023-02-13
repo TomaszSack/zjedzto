@@ -8,7 +8,7 @@ const Cart: React.FC<{ small?: boolean }> = ({ small }) => {
   const { cartItems, cartTotalPrice } = useCart();
 
   return (
-    <div className="h-5/6 bg-white shadow-lg my-3 rounded-b-3xl pt-6">
+    <div className="h-5/6 bg-white shadow-lg my-3 rounded-b-3xl pt-3 lg:pt-6">
       <div className={!small ? "h-5/6" : "h-4/5"}>
         {cartItems.map((dish) => {
           return <OrderItem key={dish.id} dish={dish} small={small} />;

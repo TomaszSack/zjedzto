@@ -28,7 +28,7 @@ const Navbar = () => {
             icon={faReceipt}
           />
         <div
-          className="relative flex items-center h-2/6"
+          className="relative flex items-center h-full"
           onMouseEnter={() => setMenuIsOpen(true)}
           onMouseLeave={() => setMenuIsOpen(false)}
         >
