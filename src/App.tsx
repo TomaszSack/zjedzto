@@ -18,7 +18,7 @@ function App() {
         </Routes>
         <Toaster
           position="top-left"
-          containerClassName="m-32"
+          containerClassName="mt-16 lg:m-32"
           toastOptions={{ duration: 5000, className:'text-center' }}
         />
       </CartProvider>

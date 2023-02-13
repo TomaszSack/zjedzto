@@ -5,7 +5,7 @@ interface Props {
 }
 
 const SummaryOrderItem: React.FC<Props> = ({ name, price, quantity }) => (
-  <div className="flex justify-between h-1/6 p-4 text-3xl">
+  <div className="flex justify-between h-1/6 p-4 sm:text-xl xl:text-3xl">
     <p>
       {quantity}x {name}
     </p>

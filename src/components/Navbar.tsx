@@ -10,17 +10,17 @@ const Navbar = () => {
   const navigate = useNavigate()
   return (
     <div className="fixed h-16 3xl:h-20 w-full bg-white shadow-nav z-10">
-      <ContentContainer className="flex items-center justify-between">
+      <ContentContainer className="flex items-center lg:justify-between px-4">
         <a href="/" className="h-4/6 transition-all hover:scale-125">
           <img src={logo} className="h-full" alt="ZjedzTo logo" />
         </a>
-        <div className="text-4xl">
+        <div className="text-3xl lg:text-4xl">
           <span className="font-bold">Zjedz</span>To
         </div>
-        <div className="flex items-center h-2/6">
+        <div className="flex items-center h-2/6 ml-auto lg:ml-0">
           <FontAwesomeIcon
             onClick={() => navigate("/orders-summary")}
-            className="h-full text-primary-pink h-8 mr-8 cursor-pointer transition-all hover:scale-125"
+            className="h-full text-primary-pink h-8 mr-4 lg:mr-8 cursor-pointer transition-all hover:scale-125"
             icon={faReceipt}
           />
           <FontAwesomeIcon
