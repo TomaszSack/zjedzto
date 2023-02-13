@@ -48,7 +48,7 @@ const OrderPage = () => {
           >
             <FormSection register={register} errors={errors} />
             <OrderSection />
-            <div className="flex flex-col justify-around items-center h-36 xl:h-1/6 w-full order-3 pb-12">
+            <div className="flex flex-col justify-around items-center h-36 xl:h-1/6 w-full order-3 pb-12 2xl:pb-2">
               <div>
                 <button
                   type="submit"
