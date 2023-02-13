@@ -37,6 +37,7 @@ beforeEach(() => {
   );
 });
 
+
 test("should render fetched data", async () => {
   await render(<ProductsList />);
   for (let i = 0; i < data.length; i++) {
@@ -45,6 +46,7 @@ test("should render fetched data", async () => {
 });
 
 test("should link to order page", () => {
+
   const { getByText } = render(<MenuSection />);
   expect(getByText("Zamawiam").closest("a")).toHaveAttribute("href", "/order");
 });
