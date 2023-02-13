@@ -10,18 +10,34 @@ interface DishProps {
   alt: string;
 }
 
-const OrderItem: React.FC<{ dish: DishProps }> = ({ dish }) => {
+const OrderItem: React.FC<{ dish: DishProps; small?: boolean }> = ({
+  dish,
+  small,
+}) => {
   const { removeFromCart } = useCart();
 
   const { id, name, price, quantity, img, alt } = dish;
 
   return (
-    <div className="w-5/6 h-3/18 m-auto bg-tertiary-orange p-1 mb-4 rounded-lg">
+    <div
+      className={
+        "m-auto rounded-lg bg-tertiary-orange " +
+        (small
+          ? "w-11/12 h-5/18 pb-1 mb-2"
+          : "w-5/6 h-3/18 p-1 mb-4")
+      }
+    >
       <div className="flex items-center justify-between w-full h-full bg-white rounded-lg overflow-hidden">
-        <img src={img} alt={alt} className="h-full" />
-        <div className="w-1/3 text-center">{name}</div>
-        <div className="text-xl">{price} zł</div>
-        <QuantityPicker min={0} max={9} value={quantity} dish={dish} />
+        {!small && <img src={img} alt={alt} className="h-full" />}
+        <div className="w-1/3 text-center text-sm">{name}</div>
+        <div className="text-lg">{price} zł</div>
+        <QuantityPicker
+          min={0}
+          max={9}
+          value={quantity}
+          dish={dish}
+          small={small}
+        />
         <button
           type="button"
           className="pr-4 text-red-400 font-bold text-2xl pb-2"
