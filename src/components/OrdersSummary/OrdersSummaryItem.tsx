@@ -75,7 +75,7 @@ const OrdersSummaryItem: React.FC<{ order: OrderItem; orderId: number }> = ({
               ul.{order.street} {order.house_number}
             </p>
             <p>
-              lokal {order.apartment_number}, piętro {order.floor}
+              {order.apartment_number && `lokal ${order.apartment_number},`} {order.floor && `piętro ${order.floor}`}
             </p>
             <p>
               {order.postcode} {order.city}
