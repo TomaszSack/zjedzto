@@ -7,7 +7,7 @@ function hasInputValue(e: TestElement, inputValue: string) {
   return screen.getByDisplayValue(inputValue) === e;
 }
 
-test("should increment initialValuew", async () => {
+test("should increment initialValue", async () => {
   render(<QuantityPicker initialValue={4} min={0} max={9} />);
 
   fireEvent.click(screen.getByTitle("plus"));
@@ -39,6 +39,9 @@ test("should not exceed max value", async () => {
   const input = screen.getByRole("textbox");
 
   expect(hasInputValue(input, "9")).toBe(true);
+  expect(screen.getByTitle("plus").closest("button")).toHaveClass(
+    "mod-disable"
+  );
 });
 
 test("should not exceed min value", async () => {
@@ -51,4 +54,7 @@ test("should not exceed min value", async () => {
   const input = screen.getByRole("textbox");
 
   expect(hasInputValue(input, "0")).toBe(true);
+  expect(screen.getByTitle("minus").closest("button")).toHaveClass(
+    "mod-disable"
+  );
 });

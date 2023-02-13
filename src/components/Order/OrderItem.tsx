@@ -1,5 +1,7 @@
 import QuantityPicker from "components/QuantityPicker/QuantityPicker";
 import { useCart } from "components/context/CartService";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface DishProps {
   id: number;
@@ -38,13 +40,11 @@ const OrderItem: React.FC<{ dish: DishProps; small?: boolean }> = ({
           dish={dish}
           small={small}
         />
-        <button
-          type="button"
-          className="pr-4 text-red-400 font-bold text-2xl pb-2"
+        <FontAwesomeIcon
           onClick={() => removeFromCart(id)}
-        >
-          x
-        </button>
+          icon={faXmark}
+          className="h-1/3 text-red-400 pr-4 cursor-pointer"
+        />
       </div>
     </div>
   );

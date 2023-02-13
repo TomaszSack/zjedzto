@@ -7,7 +7,7 @@ interface Props {
   required?: boolean;
   children: React.ReactNode;
   errors: FieldErrors<FieldValues>;
-}
+};
 
 const FormInput: React.FC<Props> = ({
   className,
