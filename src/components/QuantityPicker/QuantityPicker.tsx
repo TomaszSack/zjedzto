@@ -1,8 +1,8 @@
+import { useCart } from "components/context/CartService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
 import "./QuantityPicker.css";
-import { useCart } from "components/context/CartService";
 
 interface DishProps {
   id: number;
@@ -18,13 +18,14 @@ interface Props {
   max: number;
   min: number;
   dish: DishProps;
+  small?:boolean;
 }
 
-const QuantityPicker: React.FC<Props> = ({ value, max, min, dish }) => {
+const QuantityPicker: React.FC<Props> = ({ value, max, min, dish, small }) => {
   const { increaseCartQuantity, decreaseCartQuantity } = useCart();
 
   return (
-    <span className="quantity-picker">
+    <span className={small ? "quantity-picker-small" : "quantity-picker"}>
       <button
         type="button"
         className={`${
@@ -43,7 +44,6 @@ const QuantityPicker: React.FC<Props> = ({ value, max, min, dish }) => {
         onClick={() => increaseCartQuantity(dish)}
       >
         <FontAwesomeIcon icon={faPlus} className="h-1/2" title="plus" />
-
       </button>
     </span>
   );

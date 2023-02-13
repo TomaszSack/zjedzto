@@ -40,6 +40,9 @@ module.exports = {
       screens: {
         "3xl": "2300px",
       },
+      spacing: {
+        "minus36": "-9rem",
+      },
     },
   },
   plugins: [],
