@@ -1,3 +1,4 @@
+import { maxQuantity } from "config";
 import React, { useContext, createContext, useState, useEffect } from "react";
 
 interface Dish {
@@ -23,7 +24,7 @@ interface CartService {
   decreaseCartQuantity: (id: number) => void;
   removeFromCart: (id: number) => void;
   cartQuantity: number;
-  cartAmount: string;
+  cartTotalPrice: string;
   cartItems: CartItem[];
 }
 
@@ -42,7 +43,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     0
   );
 
-  const cartAmount = cartItems
+  const cartTotalPrice = cartItems
     .reduce((acc, item) => acc + item.price * item.quantity, 0)
     .toFixed(2);
 
@@ -57,7 +58,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         return [...currItems, { ...dish, quantity: 1 }];
       } else {
         return currItems.map((item) => {
-          if (item.id === id && item.quantity < 9) {
+          if (item.id === id && item.quantity < maxQuantity) {
             return { ...item, quantity: item.quantity + 1 };
           } else {
             return item;
@@ -98,7 +99,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         removeFromCart,
         cartItems,
         cartQuantity,
-        cartAmount,
+        cartTotalPrice,
       }}
     >
       {children}
