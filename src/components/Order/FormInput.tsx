@@ -18,13 +18,13 @@ const FormInput: React.FC<Props> = ({
   errors,
 }) => {
   return (
-    <div className="p-1">
-      <div className="flex justify-between">
+    <div className="sm:p-1 px-2 xl:px-4">
+      <div className="flex flex-col sm:flex-row justify-between">
         <label htmlFor={name} className="text-xs">
           {children}
         </label>
         {errors[name] && (
-          <p role="alert" className="pr-2 text-red-400 text-xs font-bold">
+          <p role="alert" className="pr-2  text-red-400 text-xs font-bold">
             Pole wymagane!
           </p>
         )}
@@ -33,7 +33,7 @@ const FormInput: React.FC<Props> = ({
         id={name}
         aria-label={name}
         {...register(name, { required })}
-        className={`h-6 3xl:h-8 w-64 border border-primary-gray ${className}`}
+        className={`h-5 sm:h-7 lg:h-6 xl:h-7 3xl:h-8 w-full border border-primary-gray ${className} ${errors[name] && 'border-red-400'}`}
       ></input>
     </div>
   );

@@ -54,11 +54,11 @@ const SummaryPage = () => {
         <ContentContainer className="flex flex-wrap items-center">
           <div className="h-5/6 w-full pt-2">
             <SummarySection />
-            <div className="flex flex-col justify-around items-center h-1/6 w-full">
+            <div className="flex flex-col justify-around items-center h-24 lg:h-1/6 w-full">
               <div>
                 <button
                   type="submit"
-                  className="bg-secondary-pink py-2 px-10 text-white text-2xl 3xl:text-3xl rounded-2xl"
+                  className="bg-secondary-pink py-2 px-10 text-white text-xl 3xl:text-2xl 3xl:text-3xl rounded-2xl"
                   onClick={handleSubmit}
                 >
                   Zamawiam
