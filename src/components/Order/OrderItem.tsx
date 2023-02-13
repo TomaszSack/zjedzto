@@ -26,7 +26,7 @@ const OrderItem: React.FC<{ dish: DishProps; small?: boolean }> = ({
         "bg-tertiary-orange rounded-lg " + 
         (small 
           ? "w-11/12 h-5/18 pb-1 m-auto mb-2" 
-          : "lg:w-5/6 h-16 lg:h-3/18 m-3 sm:mx-8 lg:m-auto lg:mb-4")
+          : "lg:w-5/6 h-16 lg:h-3/18 p-1 m-3 sm:mx-8 lg:m-auto lg:mb-4")
       }>
       <div className="flex items-center justify-between w-full h-full bg-white rounded-lg overflow-hidden">
         {!small && <img src={img} alt={alt} className="h-full" />}
