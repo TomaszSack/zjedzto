@@ -2,9 +2,6 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    screens: {
-      "3xl": "2300px",
-    },
     extend: {
       colors: {
         "primary-orange": "#FE9305",
@@ -39,6 +36,9 @@ module.exports = {
         "15/18": "83.3%",
         "16/18": "88.8%",
         "17/18": "94.4%",
+      },
+      screens: {
+        "3xl": "2300px",
       },
       spacing: {
         "minus36": "-9rem",
