@@ -25,7 +25,7 @@ const OrderItem: React.FC<{ dish: DishProps; small?: boolean }> = ({
       className={
         "bg-tertiary-orange rounded-lg " +
         (small
-          ? "w-11/12 h-6/18 lg:h-5/18 pb-1 m-auto mb-2"
+          ? "w-11/12 h-6/18 xl:h-5/18 pb-1 m-auto mb-2"
           : "lg:w-5/6 h-16 lg:h-3/18 p-1 m-3 sm:mx-8 lg:m-auto lg:mb-4")
       }
     >
