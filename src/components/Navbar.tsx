@@ -1,21 +1,28 @@
 import logo from "assets/logo-wbg.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping, faReceipt } from "@fortawesome/free-solid-svg-icons";
 import ContentContainer from "layout/ContentContainer";
 import { useCart } from "./context/CartService";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const { cartQuantity } = useCart();
+  const navigate = useNavigate()
   return (
     <div className="fixed h-16 3xl:h-20 w-full bg-white shadow-nav z-10">
-      <ContentContainer className="flex items-center justify-between">
-        <a href="/" className="h-4/6">
+      <ContentContainer className="flex items-center lg:justify-between px-4">
+        <a href="/" className="h-4/6 transition-all hover:scale-125">
           <img src={logo} className="h-full" alt="ZjedzTo logo" />
         </a>
-        <div className="text-4xl">
+        <div className="text-3xl lg:text-4xl">
           <span className="font-bold">Zjedz</span>To
         </div>
-        <div className="flex items-center h-2/6">
+        <div className="flex items-center h-2/6 ml-auto lg:ml-0">
+          <FontAwesomeIcon
+            onClick={() => navigate("/orders-summary")}
+            className="h-full text-primary-pink h-8 mr-4 lg:mr-8 cursor-pointer transition-all hover:scale-125"
+            icon={faReceipt}
+          />
           <FontAwesomeIcon
             className="h-full text-primary-pink"
             icon={faCartShopping}

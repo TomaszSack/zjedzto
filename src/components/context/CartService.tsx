@@ -43,6 +43,9 @@ interface CartService {
   cartItems: CartItem[];
   orderItems: OrderItem | undefined;
   setOrderItems: (value: OrderItem) => void;
+  setCartItems: (value: CartItem[]) => void;
+  sorting:string;
+  setSorting: (value:string) => void
 }
 
 const CartContext = createContext({} as CartService);
@@ -55,6 +58,8 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
   const [cartItems, setCartItems] = useState<CartItem[]>(initialCart);
   const [orderItems, setOrderItems] = useState<OrderItem>(initialOrder);
+
+  const [sorting, setSorting] = useState('name-asc');
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
@@ -128,6 +133,9 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         cartTotalPrice,
         orderItems,
         setOrderItems,
+        setCartItems,
+        sorting,
+        setSorting,
       }}
     >
       {children}
