@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const Cart: React.FC<{ small?: boolean }> = ({ small }) => {
-  const { cartItems, cartAmount } = useCart();
+  const { cartItems, cartTotalPrice } = useCart();
 
   return (
     <div className="h-5/6 bg-white shadow-lg my-3 rounded-b-3xl pt-6">
@@ -34,14 +34,14 @@ const Cart: React.FC<{ small?: boolean }> = ({ small }) => {
             </Button>
             <div>
               <div className="text-sm 3xl:text-xs">Razem</div>
-              <div>{cartAmount} zł</div>
+              <div>{cartTotalPrice} zł</div>
             </div>
           </>
         )}
         {!small && (
           <>
             <div className="text-xl">Razem</div>
-            <div>{cartAmount} zł</div>
+            <div>{cartTotalPrice} zł</div>
           </>
         )}
       </div>
