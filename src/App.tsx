@@ -8,8 +8,8 @@ import OrdersSummaryPage from "pages/OrdersSummaryPage";
 
 function App() {
   return (
-    <Router>
-      <CartProvider>
+    <CartProvider>
+      <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/order" element={<OrderPage />} />
@@ -19,10 +19,10 @@ function App() {
         <Toaster
           position="top-left"
           containerClassName="mt-16 lg:m-32"
-          toastOptions={{ duration: 5000, className:'text-center' }}
+          toastOptions={{ duration: 5000, className: "text-center" }}
         />
-      </CartProvider>
-    </Router>
+      </Router>
+    </CartProvider>
   );
 }
 

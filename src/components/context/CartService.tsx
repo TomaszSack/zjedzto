@@ -48,7 +48,7 @@ interface CartService {
   setSorting: (value:string) => void
 }
 
-const CartContext = createContext({} as CartService);
+export const CartContext = createContext({} as CartService);
 
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const storageCart = localStorage.getItem("cart");

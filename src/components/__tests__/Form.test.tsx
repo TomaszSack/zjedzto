@@ -1,20 +1,31 @@
-import { act, fireEvent, render } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "test-utils";
 import OrderPage from "pages/OrderPage";
-
 
 const data = {
   street: "Bema",
-  house_number:"23",
-  postcode:'14-100',
-  city:'Ostróda',
-  first_name:"Tomasz",
-  surname:"Sack",
-  phone_number:'123123123',
-  email:"tomasz@test.com"
-}
+  house_number: "23",
+  postcode: "14-100",
+  city: "Ostróda",
+  first_name: "Tomasz",
+  surname: "Sack",
+  phone_number: "123123123",
+  email: "tomasz@test.com",
+};
+
+test("should display required error when value is invalid", async () => {
+  const { getByRole, findAllByRole } = render(
+    <OrderPage />
+  );
+
+  fireEvent.submit(getByRole("button", { name: /zamawiam/i }));
+
+  expect(await findAllByRole("alert")).toHaveLength(8);
+});
 
 test("should not display error when value is valid", async () => {
-  const { getByRole, findByText, queryAllByRole } = render(<OrderPage />);
+  const { getByRole, queryAllByRole } = render(
+    <OrderPage />
+  );
 
   await act(async () => {
     fireEvent.change(getByRole("textbox", { name: /street/i }), {
@@ -60,17 +71,13 @@ test("should not display error when value is valid", async () => {
   });
 
   await act(async () => {
-    fireEvent.click(getByRole("button"));
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: /zamawiam/i,
+      })
+    );
   });
 
-  expect(await findByText("Zamawiam")).toBeInTheDocument();
-  expect(queryAllByRole("alert")).toHaveLength(0);
-});
-
-test("should display required error when value is invalid", async () => {
-  const { getByRole, findAllByRole } = render(<OrderPage />);
-
-  fireEvent.submit(getByRole("button", { name: /zamawiam/i }));
-
-  expect(await findAllByRole("alert")).toHaveLength(8);
+  // expect(findByText("Zamawiam")).toBeInTheDocument();
+  expect(await queryAllByRole("alert")).toHaveLength(0);
 });

@@ -1,7 +1,10 @@
-import { render } from "@testing-library/react";
+import { render, screen } from 'test-utils';
 import Navbar from "components/Navbar";
 
 test("should link to main page", () => {
-  const { getByRole } = render(<Navbar />);
-  expect(getByRole("link")).toHaveAttribute("href", "/");
+  render(<Navbar />);
+  const link = screen.getByRole("img", {
+    name: /zjedzto logo/i,
+  });
+  expect(link.closest('a')).toHaveAttribute("href", "/");
 });
