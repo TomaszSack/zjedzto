@@ -70,6 +70,38 @@ const orderHandlers = [
           ],
           id: 1675336846975,
         },
+        {
+          apartment_number: "46",
+          city: "Gdańsk",
+          comment: "Testowy komentarz, dodaj sosiwo ",
+          email: "tomek.sack@gmail.com",
+          first_name: "Tomasz",
+          floor: "1",
+          house_number: "16E",
+          phone_number: "4342442",
+          postcode: "80-041",
+          street: "Platynowa",
+          surname: "Sack",
+          order: [
+            {
+              id: 2,
+              name: "Burger z kurczakiem",
+              price: 30.99,
+              img: "assets/hero-img.jpeg",
+              alt: "soczysty burger wołowy z frytkami",
+              quantity: 2,
+            },
+            {
+              id: 5,
+              name: "Frytki",
+              price: 6.99,
+              img: "assets/hero-img.jpeg",
+              alt: "soczysty burger wołowy z frytkami",
+              quantity: 1,
+            },
+          ],
+          id: 1675673712865,
+        },
       ])
     );
   }),

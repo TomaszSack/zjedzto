@@ -3,6 +3,7 @@ import OrdersSummaryItem from "components/OrdersSummary/OrdersSummaryItem";
 import SectionHeader from "components/SectionHeader";
 import ContentContainer from "layout/ContentContainer";
 import PageWrapper from "layout/PageWrapper";
+import { BASE_URL } from "config";
 
 interface CartItem {
   id: number;
@@ -37,7 +38,7 @@ const OrdersSummaryPage = () => {
   useEffect(() => {
     try {
       const dataFetch = async () => {
-        const data = await (await fetch(url)).json();
+        const data = await (await fetch(`${BASE_URL}/orders`)).json();
         setData(data);
       };
       dataFetch();
