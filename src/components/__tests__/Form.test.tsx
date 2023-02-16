@@ -12,10 +12,64 @@ const data = {
   email: "tomasz@test.com",
 };
 
+const emptyOrder = {
+  apartment_number: "",
+  city: "",
+  comment: "",
+  email: "",
+  first_name: "",
+  floor: "",
+  house_number: "",
+  order: [],
+  phone_number: "",
+  postcode: "",
+  street: "",
+  surname: "",
+};
+
 test("should display required error when value is invalid", async () => {
-  const { getByRole, findAllByRole } = render(
-    <OrderPage />
-  );
+  const { getByRole, findAllByRole } = render(<OrderPage />);
+
+  fireEvent.change(getByRole("textbox", { name: /street/i }), {
+    target: {
+      value: emptyOrder.street,
+    },
+  });
+  fireEvent.change(getByRole("textbox", { name: /house_number/i }), {
+    target: {
+      value: emptyOrder.house_number,
+    },
+  });
+  fireEvent.change(getByRole("textbox", { name: /postcode/i }), {
+    target: {
+      value: emptyOrder.postcode,
+    },
+  });
+  fireEvent.change(getByRole("textbox", { name: /city/i }), {
+    target: {
+      value: emptyOrder.city,
+    },
+  });
+  fireEvent.change(getByRole("textbox", { name: /first_name/i }), {
+    target: {
+      value: emptyOrder.first_name,
+    },
+  });
+  fireEvent.change(getByRole("textbox", { name: /surname/i }), {
+    target: {
+      value: emptyOrder.surname,
+    },
+  });
+  fireEvent.change(getByRole("textbox", { name: /phone_number/i }), {
+    target: {
+      value: emptyOrder.phone_number,
+    },
+  });
+  fireEvent.change(getByRole("textbox", { name: /email/i }), {
+    target: {
+      value: emptyOrder.email,
+    },
+  });
 
   fireEvent.submit(getByRole("button", { name: /zamawiam/i }));
 
@@ -23,9 +77,7 @@ test("should display required error when value is invalid", async () => {
 });
 
 test("should not display error when value is valid", async () => {
-  const { getByRole, queryAllByRole } = render(
-    <OrderPage />
-  );
+  const { getByRole, queryAllByRole } = render(<OrderPage />);
 
   await act(async () => {
     fireEvent.change(getByRole("textbox", { name: /street/i }), {

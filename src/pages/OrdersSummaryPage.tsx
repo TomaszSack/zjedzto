@@ -30,8 +30,6 @@ interface OrderItem {
   id: number;
 }
 
-const url = "http://localhost:3000/orders";
-
 const OrdersSummaryPage = () => {
   const [data, setData] = useState<OrderItem[]>([]);
 

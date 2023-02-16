@@ -8,6 +8,6 @@ test("should render orders summary items", async () => {
 
   for (let i = 0; i < prices.length; i++) {
     const orderItem = await screen.findByText(prices[i]);
-    expect(orderItem).toBeInTheDocument;
+    expect(orderItem).toBeInTheDocument();
   }
 });

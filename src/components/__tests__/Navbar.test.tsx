@@ -12,9 +12,7 @@ test("should link to main page", () => {
 test("is dropdown menu showing on hover", () => {
   render(<Navbar />);
 
-  const cart = screen.queryByTestId("cart");
-
-  expect(cart).not.toBeInTheDocument();
+  expect(screen.queryByTestId("cart")).not.toBeInTheDocument();
   fireEvent.mouseOver(screen.getByTestId("cart-icon"));
-  expect(cart).toBeInTheDocument();
+  expect(screen.queryByTestId("cart")).toBeInTheDocument();
 });
