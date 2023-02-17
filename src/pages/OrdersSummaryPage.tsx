@@ -4,34 +4,10 @@ import SectionHeader from "components/SectionHeader";
 import ContentContainer from "layout/ContentContainer";
 import PageWrapper from "layout/PageWrapper";
 import { BASE_URL } from "config";
-
-interface CartItem {
-  id: number;
-  name: string;
-  price: number;
-  img: string;
-  alt: string;
-  quantity: number;
-}
-
-interface OrderItem {
-  apartment_number: string;
-  city: string;
-  comment: string;
-  email: string;
-  first_name: string;
-  floor: string;
-  house_number: string;
-  order: CartItem[];
-  phone_number: string;
-  postcode: string;
-  street: string;
-  surname: string;
-  id: number;
-}
+import { OrderItemType } from "components/OrdersSummary/OrdersSummary.types";
 
 const OrdersSummaryPage = () => {
-  const [data, setData] = useState<OrderItem[]>([]);
+  const [data, setData] = useState<OrderItemType[]>([]);
 
   useEffect(() => {
     try {
