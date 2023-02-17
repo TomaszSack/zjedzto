@@ -1,5 +1,8 @@
+import { ReactElement, ReactNode, useState } from "react";
+import { render, RenderOptions } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
+import { CartContext } from "components/context/CartService";
 import { maxQuantity } from "config";
-import React, { useContext, createContext, useState, useEffect } from "react";
 
 interface Dish {
   id: number;
@@ -33,47 +36,46 @@ interface OrderItem {
   surname: string;
 }
 
-interface CartService {
-  getItemQuantity: (id: number) => number;
-  increaseCartQuantity: (dish: Dish) => void;
-  decreaseCartQuantity: (id: number) => void;
-  removeFromCart: (id: number) => void;
-  cartQuantity: number;
-  cartTotalPrice: string;
-  cartItems: CartItem[];
-  orderItems: OrderItem | undefined;
-  setOrderItems: (value: OrderItem) => void;
-  setCartItems: (value: CartItem[]) => void;
-  sorting:string;
-  setSorting: (value:string) => void
-}
+const dish = [
+  {
+    id: 1,
+    name: "Burger wołowy z bekonem",
+    price: 32.99,
+    img: "assets/hero-img.jpeg",
+    alt: "soczysty burger wołowy z frytkami",
+    quantity: 4,
+  },
+];
 
-export const CartContext = createContext({} as CartService);
+const mockedOrder = {
+  apartment_number: "42",
+  city: "Gdańsk",
+  comment: "Proszę o dodanie dodatkowego sosu do burgera",
+  email: "tomek.sack@gmail.com",
+  first_name: "Tomasz",
+  floor: "2",
+  house_number: "16E",
+  id: 1676546032919,
+  order: [
+    {
+      id: 1,
+      name: "Burger wołowy z bekonem",
+      price: 32.99,
+      img: "assets/hero-img.jpeg",
+      alt: "soczysty burger wołowy z frytkami",
+      quantity: 4,
+    },
+  ],
+  phone_number: "4342442",
+  postcode: "80-041",
+  street: "Platynowa",
+  surname: "Sack",
+};
 
-export const CartProvider = ({ children }: { children: React.ReactNode }) => {
-  const storageCart = localStorage.getItem("cart");
-  const storageOrder = localStorage.getItem("order");
-  const storageSorting = localStorage.getItem("sorting");
-  const initialCart = storageCart ? JSON.parse(storageCart) : [];
-  const initialOrder = storageOrder ? JSON.parse(storageOrder) : {}
-  const initialSorting = storageSorting ? JSON.parse(storageSorting) : "name-asc";
-
-  const [cartItems, setCartItems] = useState<CartItem[]>(initialCart);
-  const [orderItems, setOrderItems] = useState<OrderItem>(initialOrder);
-
-  const [sorting, setSorting] = useState(initialSorting);
-
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-  }, [cartItems]);
-
-  useEffect(() => {
-    localStorage.setItem("order", JSON.stringify(orderItems));
-  }, [orderItems]);
-
-  useEffect(() => {
-    localStorage.setItem("sorting", JSON.stringify(sorting));
-  }, [sorting]);
+const AllTheProviders = ({ children }: { children: ReactNode }) => {
+  const [cartItems, setCartItems] = useState<CartItem[]>(dish)
+  const [orderItems, setOrderItems] = useState<OrderItem>(mockedOrder);
+  const [sorting, setSorting] = useState("name-asc");
 
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity + quantity,
@@ -126,27 +128,32 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
       return currItems.filter((item) => item.id !== id);
     });
   };
-
   return (
     <CartContext.Provider
       value={{
-        getItemQuantity,
         increaseCartQuantity,
         decreaseCartQuantity,
-        removeFromCart,
         cartItems,
+        setCartItems,
+        getItemQuantity,
+        removeFromCart,
         cartQuantity,
         cartTotalPrice,
         orderItems,
         setOrderItems,
-        setCartItems,
         sorting,
         setSorting,
       }}
     >
-      {children}
+      <BrowserRouter>{children}</BrowserRouter>
     </CartContext.Provider>
   );
 };
 
-export const useCart = () => useContext(CartContext);
+const customRender = (
+  ui: ReactElement,
+  options?: Omit<RenderOptions, "wrapper">
+) => render(ui, { wrapper: AllTheProviders, ...options });
+
+export * from "@testing-library/react";
+export { customRender as render };

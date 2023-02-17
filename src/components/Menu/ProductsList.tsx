@@ -38,7 +38,7 @@ const ProductsList = () => {
         setData(data);
       };
       dataFetch();
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error(error);
     }
   }, [sorting]);  

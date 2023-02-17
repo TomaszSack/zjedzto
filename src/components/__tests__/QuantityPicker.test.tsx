@@ -1,5 +1,5 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import QuantityPicker from "components/QuantityPicker/QuantityPicker";
+import { render, screen, fireEvent } from "test-utils";
+import Cart from "components/Order/Cart";
 
 type TestElement = Document | Element | Window | Node;
 
@@ -7,36 +7,41 @@ function hasInputValue(e: TestElement, inputValue: string) {
   return screen.getByDisplayValue(inputValue) === e;
 }
 
-test("should increment initialValue", async () => {
-  render(<QuantityPicker initialValue={4} min={0} max={9} />);
-
-  fireEvent.click(screen.getByTitle("plus"));
-  fireEvent.click(screen.getByTitle("plus"));
+test("should increment initialValue", () => {
+  render(<Cart />);
 
   const input = screen.getByRole("textbox");
+
+  expect(hasInputValue(input, "4")).toBe(true);
+
+  fireEvent.click(screen.getByTitle("plus"));
+  fireEvent.click(screen.getByTitle("plus"));
 
   expect(hasInputValue(input, "6")).toBe(true);
 });
 
-test("should decrement initialValue", async () => {
-  render(<QuantityPicker initialValue={4} min={0} max={9} />);
-
-  fireEvent.click(screen.getByTitle("minus"));
-  fireEvent.click(screen.getByTitle("minus"));
+test("should decrement initialValue", () => {
+  render(<Cart />);
 
   const input = screen.getByRole("textbox");
+
+  expect(hasInputValue(input, "4")).toBe(true);
+
+  fireEvent.click(screen.getByTitle("minus"));
+  fireEvent.click(screen.getByTitle("minus"));
 
   expect(hasInputValue(input, "2")).toBe(true);
 });
 
-test("should not exceed max value", async () => {
-  render(<QuantityPicker initialValue={4} min={0} max={9} />);
+test("should not exceed max value", () => {
+  render(<Cart />);
+  const input = screen.getByRole("textbox");
+
+  expect(hasInputValue(input, "4")).toBe(true);
 
   for (let i = 0; i < 10; i++) {
     fireEvent.click(screen.getByTitle("plus"));
   }
-
-  const input = screen.getByRole("textbox");
 
   expect(hasInputValue(input, "9")).toBe(true);
   expect(screen.getByTitle("plus").closest("button")).toHaveClass(
@@ -44,17 +49,14 @@ test("should not exceed max value", async () => {
   );
 });
 
-test("should not exceed min value", async () => {
-  render(<QuantityPicker initialValue={4} min={0} max={9} />);
+test("should delete order item", () => {
+  render(<Cart />);
 
-  for (let i = 0; i < 10; i++) {
-    fireEvent.click(screen.getByTitle("minus"));
-  }
+  expect(screen.getByText(/burger wołowy z bekonem/i)).toBeInTheDocument();
 
-  const input = screen.getByRole("textbox");
+  fireEvent.click(screen.getByRole("img", { name: /delete/i }));
 
-  expect(hasInputValue(input, "0")).toBe(true);
-  expect(screen.getByTitle("minus").closest("button")).toHaveClass(
-    "mod-disable"
-  );
+  expect(
+    screen.queryByText(/burger wołowy z bekonem/i)
+  ).not.toBeInTheDocument();
 });
