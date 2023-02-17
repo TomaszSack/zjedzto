@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, useState } from "react";
+import { ReactElement, ReactNode, useState } from "react";
 import { render, RenderOptions } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { CartContext } from "components/context/CartService";
