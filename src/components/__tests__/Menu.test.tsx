@@ -9,7 +9,7 @@ const data = [
 ];
 
 test("should render fetched data", async () => {
-  await render(<ProductsList />);
+  render(<ProductsList />);
   for (let i = 0; i < data.length; i++) {
     const burgerItem = await screen.findByAltText(data[i]);
     expect(burgerItem).toBeInTheDocument;

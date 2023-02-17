@@ -58,6 +58,7 @@ const OrderItem: React.FC<{ dish: DishProps; small?: boolean }> = ({
           onClick={() => removeFromCart(id)}
           icon={faXmark}
           className="lg:h-1/3 text-red-400 pr-4 cursor-pointer"
+          title="delete"
         />
       </div>
     </div>

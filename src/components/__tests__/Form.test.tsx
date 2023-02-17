@@ -130,6 +130,5 @@ test("should not display error when value is valid", async () => {
     );
   });
 
-  // expect(findByText("Zamawiam")).toBeInTheDocument();
   expect(await queryAllByRole("alert")).toHaveLength(0);
 });
