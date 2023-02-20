@@ -1,6 +1,7 @@
 import { useCart } from "components/context/CartService";
 import { useState, useEffect } from "react";
 import ProductItem from "./ProductItem";
+import { Audio } from "react-loader-spinner";
 
 interface Products {
   id: number;
@@ -13,6 +14,7 @@ interface Products {
 const ProductsList = () => {
   const { sorting } = useCart();
   const [data, setData] = useState<Products[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const sortingFunc = (sorting: string) => {
     switch (sorting) {
@@ -32,19 +34,31 @@ const ProductsList = () => {
   useEffect(() => {
     try {
       const dataFetch = async () => {
-        const data = await(
+        const data = await (
           await fetch(`http://localhost:3000/menu${sortingFunc(sorting)}`)
         ).json();
+        setIsLoading(false);
         setData(data);
       };
       dataFetch();
     } catch (error: unknown) {
       console.error(error);
     }
-  }, [sorting]);  
+  }, [sorting]);
 
   return (
     <div className="flex justify-center">
+      {isLoading && (
+        <Audio
+          height="100"
+          width="100"
+          color="rgba(245, 99, 187, 0.7)"
+          ariaLabel="audio-loading"
+          wrapperStyle={{}}
+          wrapperClass="wrapper-class"
+          visible={true}
+        />
+      )}
       <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-6 lg:gap-12">
         {data.map((dish) => {
           return <ProductItem key={dish.id} dish={dish} />;
