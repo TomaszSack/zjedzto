@@ -54,7 +54,7 @@ const OrderPage = () => {
               <div>
                 <button
                   type="submit"
-                  className="bg-secondary-pink py-2 px-10 text-white text-xl 3xl:text-3xl rounded-2xl"
+                  className={`bg-secondary-pink py-2 px-10 text-white text-xl 3xl:text-3xl rounded-2xl ${cartItems.length < 1 && 'cursor-not-allowed'}`}
                   disabled={cartItems.length < 1}
                 >
                   Zamawiam

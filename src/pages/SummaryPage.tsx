@@ -52,25 +52,40 @@ const SummaryPage = () => {
     <PageWrapper>
       <div className="h-screen bg-primary-white">
         <ContentContainer className="flex flex-wrap items-center">
-          <div className="h-5/6 w-full pt-2">
-            <SummarySection />
-            <div className="flex flex-col justify-around items-center h-24 lg:h-1/6 w-full">
-              <div>
+          {orderItems.order.length < 1 ? (
+            <div className="flex justify-center w-full h-5/6 mt-24 px-1">
+              <div className="flex flex-col justify-center items-center bg-white shadow-lg w-full h-5/6 rounded-3xl text-2xl font-bold">
+                Ups... Wystąpił problem
                 <button
                   type="submit"
-                  className="bg-secondary-pink py-2 px-10 text-white text-xl 3xl:text-2xl 3xl:text-3xl rounded-2xl"
-                  onClick={handleSubmit}
+                  className="bg-secondary-orange py-2 px-10 text-white text-xl 3xl:text-2xl 3xl:text-3xl rounded-2xl mt-12"
+                  onClick={() => navigate("/")}
                 >
-                  Zamawiam
+                  Powrót do menu
                 </button>
               </div>
-              <div>
-                <Button href="/order" cancel>
-                  Anuluj
-                </Button>
+            </div>
+          ) : (
+            <div className="h-5/6 w-full pt-2">
+              <SummarySection />
+              <div className="flex flex-col justify-around items-center h-24 lg:h-1/6 w-full">
+                <div>
+                  <button
+                    type="submit"
+                    className="bg-secondary-pink py-2 px-10 text-white text-xl 3xl:text-2xl 3xl:text-3xl rounded-2xl"
+                    onClick={handleSubmit}
+                  >
+                    Zamawiam
+                  </button>
+                </div>
+                <div>
+                  <Button href="/order" cancel>
+                    Anuluj
+                  </Button>
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </ContentContainer>
       </div>
     </PageWrapper>

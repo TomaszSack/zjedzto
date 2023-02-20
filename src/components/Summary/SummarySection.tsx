@@ -9,8 +9,6 @@ import SummaryOrderItem from "./SummaryOrderItem";
 const SummarySection = () => {
   const { cartTotalPrice, orderItems } = useCart();
 
-  if (!orderItems) return null;
-
   const {
     street,
     house_number,

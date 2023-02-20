@@ -41,11 +41,11 @@ interface CartService {
   cartQuantity: number;
   cartTotalPrice: string;
   cartItems: CartItem[];
-  orderItems: OrderItem | undefined;
+  orderItems: OrderItem;
   setOrderItems: (value: OrderItem) => void;
   setCartItems: (value: CartItem[]) => void;
-  sorting:string;
-  setSorting: (value:string) => void
+  sorting: string;
+  setSorting: (value: string) => void;
 }
 
 export const CartContext = createContext({} as CartService);
@@ -55,8 +55,10 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const storageOrder = localStorage.getItem("order");
   const storageSorting = localStorage.getItem("sorting");
   const initialCart = storageCart ? JSON.parse(storageCart) : [];
-  const initialOrder = storageOrder ? JSON.parse(storageOrder) : {}
-  const initialSorting = storageSorting ? JSON.parse(storageSorting) : "name-asc";
+  const initialOrder = storageOrder ? JSON.parse(storageOrder) : {};
+  const initialSorting = storageSorting
+    ? JSON.parse(storageSorting)
+    : "name-asc";
 
   const [cartItems, setCartItems] = useState<CartItem[]>(initialCart);
   const [orderItems, setOrderItems] = useState<OrderItem>(initialOrder);
