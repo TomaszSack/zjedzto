@@ -6,6 +6,8 @@ import OrderSection from "components/Order/OrderSection";
 import ContentContainer from "layout/ContentContainer";
 import PageWrapper from "layout/PageWrapper";
 import { useCart } from "components/context/CartService";
+import { OrderItemType } from "components/OrdersSummary/OrdersSummary.types";
+import { toast } from "react-hot-toast";
 
 const OrderPage = () => {
   const { cartItems, setOrderItems, orderItems } = useCart();
@@ -31,7 +33,7 @@ const OrderPage = () => {
 
   const navigate = useNavigate();
 
-  const onSubmit = (values: any) => {
+  const onSubmit = (values: OrderItemType) => {
     values.order = cartItems;
     values.id = Date.now();
     setOrderItems(values);
@@ -53,6 +55,10 @@ const OrderPage = () => {
                 <button
                   type="submit"
                   className="bg-secondary-pink py-2 px-10 text-white text-xl 3xl:text-3xl rounded-2xl"
+                  disabled={cartItems.length < 1}
+                  onClick={
+                    () => toast("Koszyk jest pusty")
+                  }
                 >
                   Zamawiam
                 </button>
