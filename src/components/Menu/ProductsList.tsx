@@ -46,9 +46,9 @@ const ProductsList = () => {
     }
   }, [sorting]);
 
-  return (
-    <div className="flex justify-center">
-      {isLoading && (
+  if (isLoading)
+    return (
+      <div className="flex justify-center">
         <Audio
           height="100"
           width="100"
@@ -58,7 +58,11 @@ const ProductsList = () => {
           wrapperClass="wrapper-class"
           visible={true}
         />
-      )}
+      </div>
+    );
+
+  return (
+    <div className="flex justify-center">
       <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-6 lg:gap-12">
         {data.map((dish) => {
           return <ProductItem key={dish.id} dish={dish} />;
