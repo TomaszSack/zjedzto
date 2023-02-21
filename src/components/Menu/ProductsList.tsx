@@ -1,5 +1,3 @@
-import { useCart } from "components/context/CartService";
-import { useState, useEffect } from "react";
 import ProductItem from "./ProductItem";
 import { Audio } from "react-loader-spinner";
 
@@ -11,40 +9,10 @@ interface Products {
   alt: string;
 }
 
-const ProductsList = () => {
-  const { sorting } = useCart();
-  const [data, setData] = useState<Products[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  const sortingFunc = (sorting: string) => {
-    switch (sorting) {
-      case "name-asc":
-        return "?_sort=name&_order=asc";
-      case "name-desc":
-        return "?_sort=name&_order=desc";
-      case "price-asc":
-        return "?_sort=price&_order=asc";
-      case "price-desc":
-        return "?_sort=price&_order=desc";
-      default:
-        return "";
-    }
-  };
-
-  useEffect(() => {
-    try {
-      const dataFetch = async () => {
-        const data = await (
-          await fetch(`http://localhost:3000/menu${sortingFunc(sorting)}`)
-        ).json();
-        setIsLoading(false);
-        setData(data);
-      };
-      dataFetch();
-    } catch (error: unknown) {
-      console.error(error);
-    }
-  }, [sorting]);
+const ProductsList: React.FC<{
+  data: Products[];
+  isLoading: boolean;
+}> = ({data, isLoading}) => {
 
   if (isLoading)
     return (

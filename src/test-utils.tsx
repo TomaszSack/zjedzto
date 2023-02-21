@@ -75,7 +75,6 @@ const mockedOrder = {
 const AllTheProviders = ({ children }: { children: ReactNode }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>(dish)
   const [orderItems, setOrderItems] = useState<OrderItem>(mockedOrder);
-  const [sorting, setSorting] = useState("name-asc");
 
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity + quantity,
@@ -141,8 +140,6 @@ const AllTheProviders = ({ children }: { children: ReactNode }) => {
         cartTotalPrice,
         orderItems,
         setOrderItems,
-        sorting,
-        setSorting,
       }}
     >
       <BrowserRouter>{children}</BrowserRouter>
