@@ -46,13 +46,28 @@ interface CartService {
   setCartItems: (value: CartItem[]) => void;
 }
 
+const emptyOrder = {
+  apartment_number: "",
+  city: "",
+  comment: "",
+  email: "",
+  first_name: "",
+  floor: "",
+  house_number: "",
+  order: [],
+  phone_number: "",
+  postcode: "",
+  street: "",
+  surname: "",
+};
+
 export const CartContext = createContext({} as CartService);
 
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const storageCart = localStorage.getItem("cart");
   const storageOrder = localStorage.getItem("order");
   const initialCart = storageCart ? JSON.parse(storageCart) : [];
-  const initialOrder = storageOrder ? JSON.parse(storageOrder) : {};
+  const initialOrder = storageOrder ? JSON.parse(storageOrder) : emptyOrder;
 
   const [cartItems, setCartItems] = useState<CartItem[]>(initialCart);
   const [orderItems, setOrderItems] = useState<OrderItem>(initialOrder);

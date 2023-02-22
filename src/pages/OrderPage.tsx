@@ -7,7 +7,6 @@ import ContentContainer from "layout/ContentContainer";
 import PageWrapper from "layout/PageWrapper";
 import { useCart } from "components/context/CartService";
 import { OrderItemType } from "components/OrdersSummary/OrdersSummary.types";
-import { toast } from "react-hot-toast";
 
 const OrderPage = () => {
   const { cartItems, setOrderItems, orderItems } = useCart();
