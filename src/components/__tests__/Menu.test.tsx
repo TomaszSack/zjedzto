@@ -1,6 +1,5 @@
 import { render, screen } from "test-utils";
 import MenuSection from "components/Menu/MenuSection";
-import ProductsList from "components/Menu/ProductsList";
 
 const data = [
   "soczysty burger wołowy z frytkami",
@@ -9,7 +8,7 @@ const data = [
 ];
 
 test("should render fetched data", async () => {
-  render(<ProductsList />);
+  render(<MenuSection />);
   for (let i = 0; i < data.length; i++) {
     const burgerItem = await screen.findByAltText(data[i]);
     expect(burgerItem).toBeInTheDocument;

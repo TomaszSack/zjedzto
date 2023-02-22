@@ -9,11 +9,22 @@ const Cart: React.FC<{ small?: boolean }> = ({ small }) => {
 
   return (
     <div className="h-5/6 bg-white shadow-lg my-3 rounded-b-3xl pt-3 lg:pt-6">
-      <div className={!small ? "h-5/6 overflow-auto" : "h-4/5 overflow-auto"}>
-        {cartItems.map((dish) => {
-          return <OrderItem key={dish.id} dish={dish} small={small} />;
-        })}
-      </div>
+      {cartItems.length < 1 && (
+        <div
+          className={`flex justify-center pt-2 font-bold ${
+            small ? "h-4/5 text-sm" : "h-5/6 text-lg 3xl:text-xl"
+          }`}
+        >
+          Koszyk jest pusty!
+        </div>
+      )}
+      {cartItems.length > 0 && (
+        <div className={!small ? "h-5/6 overflow-auto" : "h-4/5 overflow-auto"}>
+          {cartItems.map((dish) => {
+            return <OrderItem key={dish.id} dish={dish} small={small} />;
+          })}
+        </div>
+      )}
       <div
         className={
           "flex items-center justify-between w-5/6 border-t border-primary-gray m-auto text-xl py-3 mb-4 " +

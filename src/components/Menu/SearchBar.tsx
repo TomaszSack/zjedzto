@@ -1,14 +1,14 @@
-import { useCart } from "components/context/CartService";
-import { useState } from "react";
+const SearchBar: React.FC<{
+  search: string;
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
+  sorting: string;
+  setSorting: React.Dispatch<React.SetStateAction<string>>;
+}> = ({ search, setSearch, sorting, setSorting }) => {
 
-const SearchBar = () => {
-    const [value, setValue] = useState();
-    const {sorting, setSorting} = useCart()
-
-    const handleChange = (e:any) => {
-        e.preventDefault();
-        setValue(e.target.value)
-    }
+  const handleChange = (e: any) => {
+    e.preventDefault();
+    setSearch(e.target.value);
+  };
 
   return (
     <div className="flex justify-around items-center w-full bg-tertiary-orange h-11  my-8 lg:my-20 rounded-t-xl text-center">
@@ -29,7 +29,7 @@ const SearchBar = () => {
         type="text"
         name="search"
         placeholder="Szukaj"
-        value={value}
+        value={search}
         onChange={handleChange}
         className="w-4/12 lg:w-3/12 h-4/6 bg-white text-xl leading-6 text-center shadow-lg"
       />
