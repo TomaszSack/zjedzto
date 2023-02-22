@@ -5,48 +5,42 @@
       "name": "Burger wołowy z bekonem",
       "price": 32.99,
       "img": "assets/hero-img.jpeg",
-      "alt": "soczysty burger wołowy z bekonem",
-      "category": ["test1","test2"]
+      "alt": "soczysty burger wołowy z bekonem"
     },
     {
       "id": 2,
       "name": "Burger z kurczakiem",
       "price": 30.99,
       "img": "assets/hero-img.jpeg",
-      "alt": "soczysty burger z kurczakiem",
-      "category": ["test3", "test2"]
+      "alt": "soczysty burger z kurczakiem"
     },
     {
       "id": 3,
       "name": "Burger wołowy na ostro",
       "price": 35.99,
       "img": "assets/hero-img.jpeg",
-      "alt": "soczysty burger wołowy na ostro",
-      "category": ["test1", "test2","test3"]
+      "alt": "soczysty burger wołowy na ostro"
     },
     {
       "id": 4,
       "name": "Burger wege",
       "price": 27.99,
       "img": "assets/hero-img.jpeg",
-      "alt": "soczysty burger wege",
-      "category": ["test1", "test3"]
+      "alt": "soczysty burger wege"
     },
     {
       "id": 5,
       "name": "Frytki",
       "price": 6.99,
       "img": "assets/hero-img.jpeg",
-      "alt": "frytki",
-      "category": ["test1"]
+      "alt": "frytki"
     },
     {
       "id": 6,
       "name": "Krążki cebulowe",
       "price": 8.99,
       "img": "assets/hero-img.jpeg",
-      "alt": "krążki cebulowe",
-      "category": ["test2"]
+      "alt": "krążki cebulowe"
     }
   ],
   "orders": [
